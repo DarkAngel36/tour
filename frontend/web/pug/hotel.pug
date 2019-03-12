@@ -1,0 +1,214 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Отель";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - -
+
+		.title_box.bg_blue
+			h1.white Места отдыха
+
+		// - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		.breadcrumbs_container
+			.container
+				.row
+					.col-lg-12
+						ul.breadcrumbs.clearfix
+							li.breadcrumbs_it(data-bread-arr="/")
+								a(href="javascript:;" title="Черное море")
+									span.breadcrumbs_current Черное море
+							li.breadcrumbs_it(data-bread-arr="/")
+								a(href="javascript:;" title="Геленджик")
+									span.breadcrumbs_current Геленджик
+							li.breadcrumbs_it(data-bread-arr="/")
+								span.breadcrumbs_current Санаторий «Русь»
+						a.back_link(href="hotels.html") назад
+
+		// - - - - - - - - - - - - - End of .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .about_tour_container - - - - - - - - - - - - - - - -
+
+		.about_tour_container.indent_13
+			.container
+				.row
+					.col-lg-4.col-lg-offset-1.col-md-4.col-md-offset-1.col-sm-5
+						.about_tour_img.magnific_popup.js-lightbox(data-mfp-src="images/pool.png")
+							img(src="images/pool.png", alt="")
+					.col-lg-6.col-md-6.col-sm-7
+						div.about_tour_text
+
+							div.about_tour_top.v2
+								div
+									h2.mb5 Санаторий «Русь»
+									h6.md Геленджик
+								div
+									a.btn_orange.btn_w.reg(href="javascript:;") Скачать брошуру
+
+							div.about_tour_bottom
+								table.about_tour_table
+									thead
+										tr
+											th Период тура
+											th Категория номера
+											th Стоимость
+									tbody
+										tr
+											td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+											td(data-title='Артикул') Эконом
+											td(data-title='Наличие') от 20 000 руб.
+										tr
+											td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+											td(data-title='Артикул') Стандарт
+											td(data-title='Наличие') от 30 000 руб.
+										tr
+											td(data-title='Наимен-ие') 23.06.2018 — 01.07.2018
+											td(data-title='Артикул') Стандарт
+											td(data-title='Наличие') от 30 000 руб.
+
+		// - - - - - - - - - - - - - End of .about_tour_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .carousel_container - - - - - - - - - - - - - - - -
+
+		.carousel_container.bg_blue_lite.indent_4
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						div.carousel_wrap
+							div.owl-carousel.js-carousel.magnific_popup.js-lightbox-gallery
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="images/cathedral.png")
+									img(src="images/cathedral.png", alt="")
+
+		// - - - - - - - - - - - - - End of .carousel_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .text_container - - - - - - - - - - - - - - - -
+
+		.text_container.indent_6
+			.container
+				.row
+					.col-lg-7.col-lg-offset-1
+						div.text_box
+							h6.mb34.md Описание
+							p В 2017 году санаторий прошел классификацию "3 звезды"
+							p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр. Санаторий предлагает: проживание в однокомнатных номерах 1 категории на 1 и на 2 человека, в двухкомнатных номерах на 4 человека, в однокомнатных номерах повышенной комфортности на 2 человека, в двухкомнатных номерах повышенной комфортности на 2 и на 4 человека; 3-х разовое питание в столовой по заказному меню; лечение по профилям: заболевание опорно- двигательного аппарата, заболеваний органов дыхания, аллергических дерматитов, заболевание нервной системы, урология, гинекология.
+							p Три жилых корпуса (6-этажный и два 4-этажных). В первом 6 этажном корпусе располагаются номера 1 категории, во втором и третьем корпусах - номера категории ПК. Лечебно-диагностический центр - 3 этажа. Спальный корпус и столовая находятся в одном здании. Лечебно-диагностический центр стоит отдельно. Оба здания оснащены лифтами. Собственный пляж оборудован шезлонгами, зонтами и теневыми навесами, в 150 м от санатория.
+							p Открытый бассейн с подогреваемой водой, каскадным душем и детской зоной. В санатории царят уют, покой и тишина. Благоустроенная территория с беседками для отдыха, хвойными, лиственными деревьями и кустарниками не оставит Вас равнодушными.
+							p Охраняемая огороженная территория с детской и волейбольной площадками. Зеленые насаждения.
+							p До центральной набережной 100 м. Аквапарк «Золотая Бухта» - 50 м. До «Сафари-парка» - 5км. До развлекательного центра «Олимп» - 8 км.
+
+		// - - - - - - - - - - - - - End of .text_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - ..another_rest_container - - - - - - - - - - - - - - - -
+
+		.another_rest_container.bg_blue_lite.indent_3.mb100
+			.container
+				h2.mb37 Другие места отдыха в Геленджике
+				.row
+					.col-lg-12
+						div.place_box
+							div.rest_place
+								div.rest_place_item
+									img(src="images/recreation_1.png", alt="")
+									div
+										span.rest_place_text База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								div.rest_place_item
+									img(src="images/recreation_2.png", alt="")
+									div
+										span.rest_place_text База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								div.rest_place_item
+									img(src="images/recreation_3.png", alt="")
+									div
+										span.rest_place_text База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								div.rest_place_item
+									img(src="images/recreation_4.png", alt="")
+									div
+										span.rest_place_text База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+
+		// - - - - - - - - - - - - - End of ..another_rest_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

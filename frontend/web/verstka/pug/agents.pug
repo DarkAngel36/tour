@@ -1,0 +1,134 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Агентам";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - -
+
+		.title_box.bg_blue
+			h1.white Личный кабинет
+
+		// - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - -
+
+		.private_office
+			.container
+				.row
+					.col-xs-12.al_right
+						.private_name
+							span Иванов Иван Иванович
+							ul.private_dropdown
+								li
+									a(href="javascript:;") Личный кабинет
+								li
+									a(href="javascript:;") Редактировать
+								li
+									a(href="javascript:;") Выйти
+
+
+		// - - - - - - - - - - - - - End of private_office - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - group - - - - - - - - - - - - - - - -
+
+		.group_container.indent_2
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						.group_wrap
+							section.group_section
+								a.group_img(href="javascript:;")
+									img(src="images/group_img.svg", alt="")
+									span: span.fz26.bd.white ГРУППА 1
+								h4: a.md(href="javascript:;") 26.06-10.07 Анапа Гостиница Русь
+
+							section.group_section
+								a.group_img(href="javascript:;")
+									img(src="images/group_img.svg", alt="")
+									span: span.fz26.bd.white ГРУППА 2
+								h4: a.md(href="javascript:;") 26.06-10.07 Анапа Гостиница Русь
+
+							section.group_section
+								a.group_img(href="javascript:;")
+									img(src="images/group_img.svg", alt="")
+									span: span.fz26.bd.white ГРУППА 3
+								h4: a.md(href="javascript:;") 26.06-10.07 Анапа Гостиница Русь
+
+							section.group_section
+								a.group_img(href="javascript:;")
+									img(src="images/group_img.svg", alt="")
+									span: span.fz26.bd.white ГРУППА 4
+								h4: a.md(href="javascript:;") 26.06-10.07 Анапа Гостиница Русь
+
+							section.group_section
+								a.group_img(href="javascript:;")
+									img(src="images/group_img.svg", alt="")
+									span: span.fz26.bd.white ГРУППА 5
+								h4: a.md(href="javascript:;") 26.06-10.07 Анапа Гостиница Русь
+						.agent_link_box
+							a.link-lg.link-uppercase.md(href="javascript:;") Договор агентам
+							a.link-lg.link-uppercase.md(href="javascript:;") Реестровый номер
+		// - - - - - - - - - - - - - End of group - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

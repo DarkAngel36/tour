@@ -1,0 +1,189 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Главная страница";
+	- var headerClasses = ['header'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+		// - - - - - - - - - - - - - first_screen - - - - - - - - - - - - - - - -
+
+		.first_screen(style="background-image: url(images/first_screen.svg);")
+			.container
+				.first_box
+					h4.fz26.white.mb30.al_center Подбор железнодорожного тура
+					form.railway_tour_form
+						.form_row_col.mb30
+							.form_row
+								label.form_label.mb9.fz14 Откуда
+								select.styler.form_select
+									option Выберите город
+									option Выберите город
+									option Выберите город
+							.form_row
+								label.form_label.mb9.fz14 Куда
+								select.styler.form_select
+									option Выберите город
+									option Выберите город
+									option Выберите город
+						.form_row_col.mb46
+							.form_row
+								label.form_label.mb9.fz14 Период тура
+								select.styler.form_select
+									option Дата отправления
+									option Дата отправления
+									option Дата отправления
+								a.link-xs.link-white.link-bd.mt8(href="#") Нужно больше дней?
+							.form_row
+								.form_row_col
+									.form_row
+										label.form_label.mb9.fz14 Взрослых
+										input.styler.form_input_number(type="number" min="0")
+									.form_row
+										label.form_label.mb9.fz14 Детей
+										input.styler.form_input_number(type="number" min="0")
+						.form_button
+							button.btn_orange.btn_w2.btn_size3.btn_uppercase.reg Подобрать
+							div.al_center
+								a.link-sm.link-white(href="javascript:;" data-popup="#enter_popup") Вход для агентов /
+									span.white2 Регистрация
+
+
+		// - - - - - - - - - - - - - End of first_screen - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .railway_section - - - - - - - - - - - - - - - -
+
+		section.railway_section.indent_12
+			h2.al_center.mb70 Железнодорожные туры
+			.container
+				.row
+					.col-xs-12
+						.rest_place.mb137
+							.rest_place_item
+								img(src="images/railway_img1.svg", alt="")
+								div
+									span.rest_place_text2 Геленджик
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							.rest_place_item
+								img(src="images/railway_img2.svg", alt="")
+								div
+									span.rest_place_text2 Анапа
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							.rest_place_item
+								img(src="images/railway_img3.svg", alt="")
+								div
+									span.rest_place_text2 Сочи
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							.rest_place_item
+								img(src="images/railway_img4.svg", alt="")
+								div
+									span.rest_place_text2 Абхазия
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+
+						.row.tour_box
+							.col-lg-5.col-lg-offset-1.col-md-5.col-md-offset-1.col-sm-6.col-xs-12
+								div.tour_info
+									h2.reg.mb36 Экскурсионные туры<br> для школьников
+									p.mb31 Traveling on a tight budget often limits families and individuals from experiencing their vacation to the fullest. But with a little budgeting and research, you can enjoy a luxury vacation even on a tight budget. After all, Create a Vacation Savings Plan
+									div
+										a.btn_orange.btn_w(href="javascript:;") Программа тура
+							.col-lg-5.col-md-5.col-sm-6.col-xs-12.top_767
+								div.tour_img
+									img(src="images/school_img.svg", alt="")
+
+		// - - - - - - - - - - - - - End of .railway_section - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .ticket_container - - - - - - - - - - - - - - - -
+
+		.ticket_container.bg_blue_lite2.indent_7
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						p В продаже имеются железнодорожные билеты по направлениям:
+						ul.ticket_list
+							li
+								span.fz20.md Казань - Анапа
+								a.link-md(href="javascript:;") Просмотреть даты
+							li
+								span.fz20.md Казань - Сочи
+								a.link-md(href="javascript:;") Просмотреть даты
+						p.mb0 Заявки на билеты отправлять на почту
+							a.md(href="mailto:pochta@yandex.ru") pochta@yandex.ru
+
+		// - - - - - - - - - - - - - End of .ticket_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .about_container - - - - - - - - - - - - - - - -
+
+		.about_container.indent_8
+			.container
+				.row.tour_box
+					.col-lg-5.col-lg-offset-1.col-md-5.col-md-offset-1.col-sm-6.col-xs-12
+
+						div.tour_info.fz16
+							h2.mb20 О нас
+							p.mb31 Traveling on a tight budget often limits families and individuals from experiencing their vacation to the fullest. But with a little budgeting and research, you can enjoy a luxury vacation even on a tight budget. After all, Create a Vacation Savings Plan
+							p Instead of trying to gather up enough money for vacation at the last minute, develop a savings plan at the start of each year. Save only $20 per week and you’ll have $1040.00 after 12 months. This can take care of the hotel bill and maybe more if you find a great bargain!
+					.col-lg-5.col-md-5.col-sm-6.col-xs-12.top_767
+						div.tour_img
+							img(src="images/school_img.svg", alt="")
+
+		// - - - - - - - - - - - - - End of .about_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

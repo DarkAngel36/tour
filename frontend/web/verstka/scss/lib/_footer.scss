@@ -1,0 +1,75 @@
+#footer {
+    padding-top: 50px;
+    padding-bottom: 51px;
+    background-color: color('turquoise');
+}
+
+.footer_container{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    .logo{
+        margin-right: 71px;
+    }
+}
+    .footer_box_wrap{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-flex: 20;
+        -webkit-flex-grow: 20;
+        -ms-flex-positive: 20;
+        flex-grow: 20;
+    }
+        .footer_box{
+            
+        }
+            .footer_list{
+                li{
+                    &:not(:last-child){
+                        margin-bottom: 8px;
+                    }
+                }
+                    a{
+                        position: relative;
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            right: 100%;
+                            border-bottom: 1px solid;
+                            -webkit-transition: all 0.5s ease;
+                                 -o-transition: all 0.5s ease;
+                                    transition: all 0.5s ease;
+                        }
+                        &:hover,
+                        &.current{
+                            &:after{
+                                right: 0;
+                            }   
+                        }
+                    }
+            }
+            .footer_list,
+            .footer_info{
+                font-size: 16px;
+                line-height: 1.2;
+                color: color('white-lite');
+            }
+
+            .footer_info {
+                & p{
+                    margin-bottom: 8px;
+                }
+            }

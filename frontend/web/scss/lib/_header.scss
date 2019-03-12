@@ -1,0 +1,147 @@
+    #header{
+        padding: 28px 0;
+    }
+    .header{
+        position: relative;
+        z-index: 99;
+        .logo{
+            > a{
+                color: $orange-lite;
+            }
+        }
+    }
+    .header1 {
+        background-image: -webkit-gradient(linear, left bottom, left top, from(#308fa4), to(rgba(48, 143, 164, 0.67)));
+        background-image: -webkit-linear-gradient(bottom, #308fa4, rgba(48, 143, 164, 0.67));
+        background-image: -o-linear-gradient(bottom, #308fa4, rgba(48, 143, 164, 0.67));
+        background-image: linear-gradient(to top, #308fa4, rgba(48, 143, 164, 0.67));
+    }
+        .header_container{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+            -webkit-justify-content: space-between;
+                    -webkit-box-pack: justify;
+                    -ms-flex-pack: justify;
+                    justify-content: space-between;
+        }
+            .logo{
+
+                > a{
+                    display:block;
+                    text-decoration:none;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 26px;
+                    font-weight: 900;
+                    line-height: normal;
+                    color: $white;
+                    white-space: nowrap;
+                }
+            }
+
+            #primary_nav{
+
+            }
+                .js-btn-menu{
+                    position: relative;
+                    width: 50px;
+                    height: 50px;
+                    cursor: pointer;
+                    span{
+                        position: absolute;
+                        top: 50%;
+                        left: 5px;
+                        right: 5px;
+                        height: 4px;
+                        display: block;
+                        margin-top: -2px;
+                        background: $white;
+
+                        &:before,
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            display: block;
+                            width: 100%;
+                            height: 4px;
+                            background-color: $white;
+                            -webkit-transition: all ease 0.5s;
+                                 -o-transition: all ease 0.5s;
+                                    transition: all ease 0.5s;
+                        }
+                        &:before {
+                            top: -15px;
+                        }
+                        &:after{
+                            bottom: -15px;
+                        }
+                    }
+                    &.active{
+                        span{
+                            background: none;
+                            &:before,
+                            &:after{
+                                -webkit-transition: all ease 0.5s;
+                                     -o-transition: all ease 0.5s;
+                                        transition: all ease 0.5s;
+                            }
+                            &:before{
+                                top: 0;
+                                -webkit-transform: rotate(45deg);
+                                -ms-transform: rotate(45deg);
+                                transform: rotate(45deg);
+                            }
+                            &:after{
+                                bottom: 0;
+                                -webkit-transform: rotate(-45deg);
+                                -ms-transform: rotate(-45deg);
+                                transform: rotate(-45deg);
+                            }
+                        }
+                    }
+                }
+                #menu{
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-align-items: center;
+                            -webkit-box-align: center;
+                            -ms-flex-align: center;
+                            align-items: center;
+                }
+                    .menu_item{
+                        padding: 0 13px;
+                    }
+                        .menu_link{
+                            position: relative;
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: $white;
+                            &:after{
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                bottom: -5px;
+                                right: 100%;
+                                border-bottom: 3px solid;
+                                -webkit-transition: all 0.5s ease;
+                                     -o-transition: all 0.5s ease;
+                                        transition: all 0.5s ease;
+                            }
+                            &:hover,
+                            &.current{
+                                &:after{
+                                    right: 0;
+                                }
+                            }
+                        }
+
+
+

@@ -1,0 +1,91 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Контакты";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .contact_container - - - - - - - - - - - - - - - -
+
+		.contact_container.indent_9
+			.container
+				.row
+					.col-md-5.col-md-offset-1.col-sm-6
+						div.about_box
+							h2.mb20 О нас
+							p Traveling on a tight budget often limits families and individuals from experiencing their vacation to the fullest. But with a little budgeting and research, you can enjoy a luxury vacation even on a tight budget. After all, Create a Vacation Savings Plan
+							p Instead of trying to gather up enough money for vacation at the last minute, develop a savings plan at the start of each year. Save only $20 per week and you’ll have $1040.00 after 12 months. This can take care of the hotel bill and maybe more if you find a great bargain! Instead of trying to gather up enough money for vacation at the last minute, develop a savings plan at the start of each year. Save only $20 per week and you’ll have $1040.00 after 12 months. This can take care of the hotel bill and maybe more if you find a great bargain
+					.col-md-5.col-sm-6
+						div.contacts_box
+							h2.mb20 Контакты
+							dl.contact_list
+								dt Адрес
+								dd Республика Татарстан, г. Казань <br>ул. Декабристов, д. 81Б
+								dt Телефон
+								dd +7 (912) 899-89-98
+								dt E-mail
+								dd pochta@yandex.ru
+							#ymap.ymap
+
+		// - - - - - - - - - - - - - End of .contact_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

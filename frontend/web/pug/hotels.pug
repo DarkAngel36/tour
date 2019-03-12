@@ -1,0 +1,132 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Каталог отели";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - -
+
+		.title_box.bg_blue
+			h1.white Места отдыха
+
+		// - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .hotel_container - - - - - - - - - - - - - - - -
+
+		.hotel_container.indent_10
+			.container
+				.row
+
+					.col-lg-3.col-md-3
+						aside
+							h4.mb34 Черное море
+							ul.city_list
+								li
+									a.current(href="javascript:;") Геленджик
+								li
+									a(href="javascript:;") Анапа
+								li
+									a(href="javascript:;") Сочи
+								li
+									a(href="javascript:;") Крым
+								li
+									a(href="javascript:;") Абхазия
+
+					.col-lg-9.col-md-9
+
+						div.rest_place_box.clearfix
+							a.rest_place_img(href="hotel.html" target="_blank")
+								img(src="images/sanatorium_rus.png", alt="")
+							div.rest_place_info
+								h4.rest_place_title.md: a(href="hotel.html") Санаторий «Русь»
+								h6.rest_place_subtitle.md Геленджик
+								p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+								.rest_place_link_box
+									a.btn_orange.btn_w(href="hotel.html" target="_blank") Подобрать тур
+									a(href="javascript:;") Читать подробнее…
+
+						div.rest_place_box.clearfix
+							a.rest_place_img(href="hotel.html" target="_blank")
+								img(src="images/pension_rus.png", alt="")
+							div.rest_place_info
+								h4.rest_place_title.md: a(href="hotel.html") Пансионат «Русь»
+								h6.rest_place_subtitle.md Геленджик
+								p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+								.rest_place_link_box
+									a.btn_orange.btn_w(href="hotel.html" target="_blank") Подобрать тур
+									a(href="javascript:;") Читать подробнее…
+
+						div.rest_place_box.clearfix
+							a.rest_place_img(href="hotel.html" target="_blank")
+								img(src="images/rest_rus.png", alt="")
+							div.rest_place_info
+								h4.rest_place_title.md: a(href="hotel.html") База отдыха «Русь»
+								h6.rest_place_subtitle.md Геленджик
+								p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+								.rest_place_link_box
+									a.btn_orange.btn_w(href="hotel.html" target="_blank") Подобрать тур
+									a(href="javascript:;") Читать подробнее…
+
+		// - - - - - - - - - - - - - End of .hotel_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

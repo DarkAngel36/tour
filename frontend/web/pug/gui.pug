@@ -1,0 +1,812 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Гуи лист";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		.breadcrumbs_container(style="margin-bottom: 45px;")
+			.container
+				.row
+					.col-lg-12
+						ul.breadcrumbs.clearfix
+							li.breadcrumbs_it(data-bread-arr="/")
+								a(href="javascript:;" title="Перейти на главную страницу")
+									span.breadcrumbs_current Черное море
+							li.breadcrumbs_it(data-bread-arr="/")
+								a(href="javascript:;" title="Перейти на главную страницу")
+									span.breadcrumbs_current Геленджик
+							li.breadcrumbs_it(data-bread-arr="/")
+								span.breadcrumbs_current Санаторий «Русь»
+						a.back_link(href="javascript:;") назад
+
+		section(style="margin-bottom: 45px;")
+			.container
+				a.btn_orange.btn_w(href="javascript:;") Подобрать тур
+				button.btn_orange.btn_w Подобрать тур
+				br
+				br
+				a.btn_orange.btn_w.btn_size.btn_uppercase(href="javascript:;") ОПЛАТИТЬ
+				button.btn_orange.btn_w.btn_size.btn_uppercase ОПЛАТИТЬ
+				br
+				br
+				a.btn_orange.btn_w(href="javascript:;") Заказать тур
+				button.btn_orange.btn_w Заказать тур
+				br
+				br
+				a.btn_orange.btn_w.btn_size2(href="javascript:;") Войти
+				button.btn_orange.btn_w.btn_size2 Войти
+				br
+				br
+				a.btn_orange.btn_w2.btn_size3.btn_uppercase.reg(href="javascript:;") Подобрать
+				button.btn_orange.btn_w2.btn_size3.btn_uppercase.reg Подобрать
+				br
+				br
+				a.btn_orange.btn_w2.btn_size3.btn_uppercase(href="javascript:;") Подобрать
+				button.btn_orange.btn_w2.btn_size3.btn_uppercase Подобрать
+				br
+				br
+				a.btn_orange.btn_w3.btn_size4(href="javascript:;") Зарегистрироваться
+				button.btn_orange.btn_w3.btn_size4 Зарегистрироваться
+				br
+				br
+				a.btn_orange.btn_w.btn_size.btn_uppercase(href="javascript:;") Забронировать
+				button.btn_orange.btn_w.btn_size.btn_uppercase Забронировать
+				br
+				br
+				a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+				button.btn_orange.btn_w4.btn_size5 Подробнее
+
+
+	section(style="margin-bottom: 45px;")
+		.container
+			.row
+				.col-lg-5.col-lg-offset-1
+					div.about_box
+						h2.mb20 О нас
+						p Traveling on a tight budget often limits families and individuals from experiencing their vacation to the fullest. But with a little budgeting and research, you can enjoy a luxury vacation even on a tight budget. After all, Create a Vacation Savings Plan
+						p Instead of trying to gather up enough money for vacation at the last minute, develop a savings plan at the start of each year. Save only $20 per week and you’ll have $1040.00 after 12 months. This can take care of the hotel bill and maybe more if you find a great bargain! Instead of trying to gather up enough money for vacation at the last minute, develop a savings plan at the start of each year. Save only $20 per week and you’ll have $1040.00 after 12 months. This can take care of the hotel bill and maybe more if you find a great bargain
+				.col-lg-5
+					div.contacts_box
+						h2.mb20 Контакты
+						dl.contact_list
+							dt Адрес
+							dd Республика Татарстан, г. Казань <br>ул. Декабристов, д. 81Б
+							dt Телефон
+							dd +7 (912) 899-89-98
+							dt E-mail
+							dd pochta@yandex.ru
+						#ymap.ymap
+
+	section(style="margin-bottom: 45px;")
+		.container
+			.row
+				.col-lg-3
+					aside
+						h4.mb34 Черное море
+						ul.city_list
+							li
+								a.current(href="javascript:;") Геленджик
+							li
+								a(href="javascript:;") Анапа
+							li
+								a(href="javascript:;") Сочи
+							li
+								a(href="javascript:;") Крым
+							li
+								a(href="javascript:;") Абхазия
+				.col-lg-9
+
+					div.rest_place_box.clearfix
+						a.rest_place_img(href="javascript:;")
+							img(src="images/sanatorium_rus.png", alt="")
+						div.rest_place_info
+							h4.rest_place_title.md: a(href="javascript:;") Санаторий «Русь»
+							h6.rest_place_subtitle.md Геленджик
+							p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+							.rest_place_link_box
+								a.btn_orange.btn_w(href="javascript:;") Подобрать тур
+								a(href="javascript:;") Читать подробнее…
+
+					div.rest_place_box.clearfix
+						a.rest_place_img(href="javascript:;")
+							img(src="images/pension_rus.png", alt="")
+						div.rest_place_info
+							h4.rest_place_title.md: a(href="javascript:;") Пансионат «Русь»
+							h6.rest_place_subtitle.md Геленджик
+							p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+							.rest_place_link_box
+								a.btn_orange.btn_w(href="javascript:;") Подобрать тур
+								a(href="javascript:;") Читать подробнее…
+
+					div.rest_place_box.clearfix
+						a.rest_place_img(href="javascript:;")
+							img(src="images/rest_rus.png", alt="")
+						div.rest_place_info
+							h4.rest_place_title.md: a(href="javascript:;") База отдыха «Русь»
+							h6.rest_place_subtitle.md Геленджик
+							p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр...
+							.rest_place_link_box
+								a.btn_orange.btn_w(href="javascript:;") Подобрать тур
+								a(href="javascript:;") Читать подробнее…
+
+	section(style="margin-bottom: 45px;")
+		.container
+			.row.tour_box
+				.col-lg-5.col-lg-offset-1
+					a.tour_img(href="javascript:;")
+						img(src="images/church.png", alt="")
+				.col-lg-5
+					div.tour_info
+						h2.mb20: a(href="javascript:;") Нижний Новгород — Болдино
+						p.mb20 Стоимость тура: 15900 руб./школьник.<br> Доплата за взрослого в составе группы – 1800 руб.
+						p.mb20 Небольшое описание данного тура…
+						div.tour_link
+							a.link-icon-right.link-sm.md(href="javascript:;")
+								|Программа тура
+								i: img(src="images/icons/arrow_right.svg", alt="")
+						div
+							a.btn_orange.btn_w(href="javascript:;") Заказать тур
+
+			.row.tour_box
+				.col-lg-5.col-lg-offset-1
+					div.tour_info
+						h2.mb20: a(href="javascript:;") Нижний Новгород — Болдино
+						p.mb20 Стоимость тура: 15900 руб./школьник.<br> Доплата за взрослого в составе группы – 1800 руб.
+						p.mb20 Небольшое описание данного тура…
+						div.tour_link
+							a.link-icon-right.link-sm.md(href="javascript:;")
+								|Программа тура
+								i: img(src="images/icons/arrow_right.svg", alt="")
+						div
+							a.btn_orange.btn_w(href="javascript:;") Заказать тур
+				.col-lg-5
+					a.tour_img(href="javascript:;")
+						img(src="images/church.png", alt="")
+
+	section(style="margin-bottom: 45px;")
+		div.bg_blue_lite.indent_3
+			.container
+				.row
+					.col-lg-12(style="margin-bottom: 45px;")
+						h2.mb37 Другие места отдыха в Геленджике
+						div.rest_place
+							div.rest_place_item
+								img(src="images/recreation_1.png", alt="")
+								div
+									span.rest_place_text База отдыха «Русь»
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							div.rest_place_item
+								img(src="images/recreation_2.png", alt="")
+								div
+									span.rest_place_text База отдыха «Русь»
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							div.rest_place_item
+								img(src="images/recreation_3.png", alt="")
+								div
+									span.rest_place_text База отдыха «Русь»
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+							div.rest_place_item
+								img(src="images/recreation_4.png", alt="")
+								div
+									span.rest_place_text База отдыха «Русь»
+									a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+
+					.col-lg-12
+						.rest_place
+								.rest_place_item
+									img(src="images/railway_img1.svg", alt="")
+									div
+										span.rest_place_text2 База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								.rest_place_item
+									img(src="images/railway_img2.svg", alt="")
+									div
+										span.rest_place_text2 База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								.rest_place_item
+									img(src="images/railway_img3.svg", alt="")
+									div
+										span.rest_place_text2 База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+								.rest_place_item
+									img(src="images/railway_img4.svg", alt="")
+									div
+										span.rest_place_text2 База отдыха «Русь»
+										a.btn_orange.btn_w4.btn_size5(href="javascript:;") Подробнее
+
+	section(style="margin-bottom: 45px;")
+		div.bg_blue_lite.indent_4
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						div.carousel_wrap
+							div.owl-carousel.js-carousel
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+
+	section(style="margin-bottom: 45px;")
+		.container
+			.row
+				.col-lg-7.col-lg-offset-1
+					div.text_box.indent_5
+						h6.mb34 Программа тура
+						div 1-ый день
+						ul.program_list
+							li Встреча группы на Ж/Д вокзале Казани. Отправление в Нижний Новгород.
+
+						div 2-й день
+						ul.program_list
+							li Завтрак в кафе города.
+							li Встреча с гидом.
+							li Автобусная обзорная экскурсия по городу. (Экскурсия  по территории Старого Канавино и рассказ о знаменитой Нижегородской Ярмарке- Кармане России. Осмотр Собора Александра Невского, возведенного в 50 года XIX века.Грандиозная высота собора (87 м) до сих пор обеспечивает ему третье место среди храмов России.
+							li Осмотр Нижне-Волжской набережной. Осмотр центральной площади Нижнего — Минина и Пожарского, которая возникла из двух соседствовавших до 1917 года площади Благовещенской и Семинарской. Посещение Нижегородского кремля — самого старого и впечатляющего архитектурного памятника в нашем городе, привольно раскинувшийся на вершинах Дятловых гор. Прогуляетесь по площади Минина, где увидите первый фонтан в городе. Осмотрите памятник Валерию Чкалову, который возглавляет одноименную лестницу.
+							li Обед в кафе города.
+							li Заселение в гостиницу 3* (номера с удобствами).
+							li Свободное время.
+							li Ужин в ресторане гостиницы.
+							li Ночь в отеле.
+
+						div 3-й день
+						ul.program_list
+							li Завтрак в ресторане гостиницы.
+							li Встреча с гидом в холле отеля.
+							li Отправление на загородную экскурсию в село Большое Болдино. Из путевой информации вы узнаете много интересного и неизвестного о Пушкине. По прибытию вас ждет обзорная экскурсия по селу. Посетите храм Успения Пресвятой Богородицы, построенного на деньги дедушки поэта и освященного в год рождения А.С. Пушкина. Прогуляетесь по парку к дерновой скамейке, вековым дубам.
+							li Обед в кафе города.
+							li Отправление на вторую часть экскурсионной программы. Посещение литературно-мемориального и природного музея - заповедник «Болдино». Экскурсия включает в себя знакомство с экспозицией дома-музея и осмотр усадьбы (парк, вотчинная контора и другие усадебные постройки). Экспозиция дома посвящена пребыванию Пушкина в Болдино, его творчеству, отмеченному небывалым взлетом вдохновения в осенние месяцы 1830 и 1833 гг. Отдельно стоящий домик вотчинной конторы знакомит с хозяйственной стороной жизни болдинского имения. В других усадебных постройках – людской, баньке, конюшне – размещаются выставки, рассказывающие о быте усадьбы, примечательных явлениях крестьянской культуры, народных промыслах.
+							li Отправление в Нижний Новгород.
+							li Ужин в ресторане гостиницы.
+							li Ночь в отеле.
+
+						div 4-й день
+						ul.program_list
+							li Завтрак в ресторане гостиницы.
+							li Освобождение номеров.
+							li Встреча с гидом в холле отеля.
+							li Пешеходная экскурсия по городу.
+							li Посещение усадьбы Руковишниковых.
+							li Обед в кафе города.
+							li Посещение музея-квартиры Горького.
+							li Трансфер на вокзал.
+							li Ужин в кафе города.
+							li Посадка на поезд.
+							li Отправление в Казань.
+
+						div 5-й день
+						ul.program_list
+							li Прибытие в Казань.
+
+
+	section(style="margin-bottom: 45px;").indent_6
+		.container
+			.row
+				.col-lg-7.col-lg-offset-1
+					div.text_box
+						h6.mb34 Описание
+						p В 2017 году санаторий прошел классификацию "3 звезды"
+						p Санаторий «Русь» расположен в черте города-курорта Геленджик в 100 м от центральной набережной. На территории находится 3 спальных корпуса, рассчитанных на 400 мест, столовая и лечебно-диагностический центр. Санаторий предлагает: проживание в однокомнатных номерах 1 категории на 1 и на 2 человека, в двухкомнатных номерах на 4 человека, в однокомнатных номерах повышенной комфортности на 2 человека, в двухкомнатных номерах повышенной комфортности на 2 и на 4 человека; 3-х разовое питание в столовой по заказному меню; лечение по профилям: заболевание опорно- двигательного аппарата, заболеваний органов дыхания, аллергических дерматитов, заболевание нервной системы, урология, гинекология.
+						p Три жилых корпуса (6-этажный и два 4-этажных). В первом 6 этажном корпусе располагаются номера 1 категории, во втором и третьем корпусах - номера категории ПК. Лечебно-диагностический центр - 3 этажа. Спальный корпус и столовая находятся в одном здании. Лечебно-диагностический центр стоит отдельно. Оба здания оснащены лифтами. Собственный пляж оборудован шезлонгами, зонтами и теневыми навесами, в 150 м от санатория.
+						p Открытый бассейн с подогреваемой водой, каскадным душем и детской зоной. В санатории царят уют, покой и тишина. Благоустроенная территория с беседками для отдыха, хвойными, лиственными деревьями и кустарниками не оставит Вас равнодушными.
+						p Охраняемая огороженная территория с детской и волейбольной площадками. Зеленые насаждения.
+						p До центральной набережной 100 м. Аквапарк «Золотая Бухта» - 50 м. До «Сафари-парка» - 5км. До развлекательного центра «Олимп» - 8 км.
+
+	section(style="margin-bottom: 45px;")
+		div.about_tour_container
+			.container
+				.row
+					.col-lg-4.col-lg-offset-1
+						.about_tour_img
+							img(src="images/church_sm.png", alt="")
+					.col-lg-6
+						div.about_tour_text
+
+							div.about_tour_top
+								div
+									h2.mb20 Болдино
+									h6.md Нижний Новгород
+								div
+									a.btn_orange.btn_w.reg(href="javascript:;") Скачать брошуру
+
+							div.about_tour_bottom
+								ul.mb25
+									li
+										span Стоимость тура:
+										span 15900 руб./школьник.
+									li
+										span  Доплата за взрослого в составе группы –
+										span 1800 руб.
+
+								div В стоимость входит:
+								ul.about_tour_list
+									li Ж/Д проезд туда/обратно (плацкарт)
+									li Питание 3-х разовое (завтрак, обед, ужин)
+									li Проживание в отеле «Маринс Парк» 2н./3дн.
+									li Транспортное обслуживание по программе
+									li Экскурсионное обслуживание по программе
+									li Входные билеты по программе
+									li 2 загородные поездки
+	section(style="margin-bottom: 45px;")
+		div.about_tour_container
+			.container
+				.row
+					.col-lg-4.col-lg-offset-1
+						.about_tour_img
+							img(src="images/pool.png", alt="")
+					.col-lg-6
+						div.about_tour_text
+
+							div.about_tour_top.v2
+								div
+									h2.mb5 Санаторий «Русь»
+									h6.md Геленджик
+								div
+									a.btn_orange.btn_w.reg(href="javascript:;") Скачать брошуру
+
+							div.about_tour_bottom
+								table.about_tour_table.responsive_table
+									thead
+										tr
+											th Период тура
+											th Категория номера
+											th Стоимость
+									tbody
+										tr
+											td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+											td(data-title='Артикул') Эконом
+											td(data-title='Наличие') от 20 000 руб.
+										tr
+											td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+											td(data-title='Артикул') Стандарт
+											td(data-title='Наличие') от 30 000 руб.
+										tr
+											td(data-title='Наимен-ие') 23.06.2018 — 01.07.2018
+											td(data-title='Артикул') Стандарт
+											td(data-title='Наличие') от 30 000 руб.
+
+	div
+		.container
+			h3.mb20 Группа 1
+			.row
+				.col-lg-4.col-lg-offset-1
+					div.group_info
+						h4.mb13 Анапа
+						h6.md.mb20 База отдыха «Чайка»
+						ul.group_list
+							li
+								div ФИО
+								div Иванов Иван Иванович
+							li
+								div Период тура
+								div 15.08.2018 — 23.06.2018
+							li
+								div Категория номера
+								div Эконом
+							li
+								div Тип тура
+								div Железнодорожный
+							li
+								div Количество человек
+								div 12
+							li
+								div Тип размещения
+								div.group_list_item
+									div 1 номер — 2 взрослых
+									div 1 номер — 1 взрослых
+									div 1 номер — 2 взрослых
+									a.link-bd.reg(href="javascript:;") + Добавить номер
+						div.group_price
+							span Сумма к оплате
+							span 84 000 рублей
+						a.btn_orange.btn_w.btn_uppercase(href="javascript:;") ОПЛАТИТЬ
+
+				.col-lg-4.col-lg-offset-1
+					div.js-slick.slider-for
+						div
+							img(src="images/pool.png", alt="")
+						div
+							img(src="images/church_sm.png", alt="")
+						div
+							img(src="images/pool.png", alt="")
+						div
+							img(src="images/church_sm.png", alt="")
+
+
+					div.js-slick.slider-nav
+						div
+							img(src="images/cafe.png", alt="")
+						div
+							img(src="images/house.png", alt="")
+						div
+							img(src="images/cafe.png", alt="")
+						div
+							img(src="images/house.png", alt="")
+
+
+
+	div
+		.container
+			.row
+				.col-lg-4.col-lg-offset-1
+					div.group_info
+						h4.mb13 Анапа
+						h6.md.mb20 База отдыха «Чайка»
+						ul.group_list
+							li
+								div ФИО
+								div Иванов Иван Иванович
+							li
+								div Период тура
+								div 15.08.2018 — 23.06.2018
+							li
+								div Категория номера
+								div Эконом
+							li
+								div Тип тура
+								div Железнодорожный
+							li
+								div Количество человек
+								div 12
+							li
+								div Тип размещения
+								div.group_list_item
+									div 1 номер — 2 взрослых
+									div 1 номер — 1 взрослых
+									div 1 номер — 2 взрослых
+									a.link-bd.reg(href="javascript:;") + Добавить номер
+						div.group_price
+							span Сумма к оплате
+							span 84 000 рублей
+						a.btn_orange.btn_w.btn_uppercase(href="javascript:;") ОПЛАТИТЬ
+
+				.col-lg-4.col-lg-offset-1
+					div
+						img(src="images/fountain.png", alt="")
+
+
+	section(style="margin-bottom: 102px;")
+		div.about_tour_container
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						.clearfix.select_tour_item
+							.about_tour_img2
+								img(src="images/park_sm1.png", alt="")
+							div.about_tour_text2
+								div.mb25
+									h6.mb5 Анапа
+									h6.md База отдыха «Чайка»
+
+								div.about_tour_bottom
+									table.about_tour_table.version2
+										thead
+											tr
+												th Период тура
+												th Категория номера
+												th Стоимость
+												th
+										tbody
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Эконом
+												td(data-title='Наличие') от 20 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 23.06.2018 — 01.07.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+						.clearfix.select_tour_item
+							.about_tour_img2
+								img(src="images/park_sm2.png", alt="")
+							div.about_tour_text2
+								div.mb25
+									h6.mb5 Анапа
+									h6.md База отдыха «Лебедь»
+
+								div.about_tour_bottom
+									table.about_tour_table.version2
+										thead
+											tr
+												th Период тура
+												th Категория номера
+												th Стоимость
+												th
+										tbody
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Эконом
+												td(data-title='Наличие') от 20 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 23.06.2018 — 01.07.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+						.clearfix.select_tour_item
+							.about_tour_img2
+								img(src="images/park_sm3.png", alt="")
+							div.about_tour_text2
+								div.mb25
+									h6.mb5 Анапа
+									h6.md База отдыха «Маяк»
+
+								div.about_tour_bottom
+									table.about_tour_table.version2
+										thead
+											tr
+												th Период тура
+												th Категория номера
+												th Стоимость
+												th
+										tbody
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Эконом
+												td(data-title='Наличие') от 20 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 15.06.2018 — 23.06.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+											tr
+												td(data-title='Наимен-ие') 23.06.2018 — 01.07.2018
+												td(data-title='Артикул') Стандарт
+												td(data-title='Наличие') от 30 000 руб.
+												td
+													a.link-md.md(href="javascript:;") Выбрать
+
+
+
+
+	div.mb25
+		.container
+			.row
+				.col-lg-10.col-lg-offset-1
+					.step_container
+						a.link-xl.link-blue-lite.bd.current(href="javascript:;") 01. Подбор тура
+						a.link-xl.link-blue-lite.bd(href="javascript:;") 02. Заполнение информации
+						a.link-xl.link-blue-lite.bd(href="javascript:;") 03. Бронирование
+
+	sectuon
+		.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						h6.head_title.mb37 Данные туристов
+						table.tourist_table
+							tr
+								th № п/п
+								th Пол
+								th Фамилия
+								th Имя
+								th Отчество
+								th Дата рождения
+								th Паспорт
+								th Телефон
+								th E-mail
+							tr
+								td(data-title='№ п/п') 1
+								td
+									.xs: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.sm: input(type="text")
+									.md: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+							tr
+								td(data-title='№ п/п') 2
+								td
+									.xs: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.sm: input(type="text")
+									.md: input(type="text")
+								td
+									.lg: input(type="text")
+								td
+									.lg: input(type="text")
+
+
+						.tourist_settings
+							h6.tourist_settings_title Тип вагона
+							.tourist_settings_item
+								.coach_checked_place
+									span.md Плацкарт
+									input#coach_checkbox(type="checkbox")
+									label(for="coach_checkbox")
+									span.md Купе
+							.tourist_settings_item
+								span.tourist_settings_square.square_current
+								span Выбранные места
+							.tourist_settings_item
+								span.tourist_settings_square.square_empty
+								span Свободные места
+							.tourist_settings_item
+								span.tourist_settings_square.square_active
+								span Занятые места
+
+						.railway_box
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place.active н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place в
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place в
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place в
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place.current в
+
+							.railway_section
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place н
+								div: img(src="images/icons/black_cloud.svg", alt="")
+								div
+									.railway_section_place.mb20 в
+									.railway_section_place.mb40 н
+									.railway_section_place в
+
+
+
+
+
+
+
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		div(class="arcticmodal_container_box" id="box-modal")
+			div(class="arcticmodal-close") &times;
+			p Поздравляем! Заявка отправлена
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

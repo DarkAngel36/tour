@@ -1,0 +1,36 @@
+$default: #003357;
+$black: #000;
+$grey: #393939;
+$white: #fff;
+$white-lite: #fdfdfd;
+$white-lite2: #feffff;
+$white-lite3: #fefefe;
+$blue: #38b2ce;
+$dark-blue: #0a3843;
+$orange-lite: #ff9f40;
+$orange: #ff7f00;
+$turquoise: #3994a8;
+$colors: (
+  'default' : $default,
+  'black' : $black,
+  'grey' : $grey,
+  'white' : $white,
+  'white-lite' : $white-lite,
+  'white-lite2': $white-lite2,
+  'white-lite3': $white-lite3,
+  'blue' : $blue,
+  'dark-blue' : $dark-blue,
+  'orange-lite': $orange-lite,
+  'orange': $orange,
+  "turquoise" : $turquoise,
+);
+
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    $key: map-get($colors, $key);
+    @return color($key);
+  }
+
+  @return $key;
+}

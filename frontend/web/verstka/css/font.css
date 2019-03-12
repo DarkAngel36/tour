@@ -1,0 +1,44 @@
+@font-face {
+    font-family:'Proxima Nova';
+    src: url('../fonts/Proxima/ProximaNova-Regular.eot');
+    src: url('../fonts/Proxima/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/Proxima/ProximaNova-Regular.woff') format('woff'),
+        url('../fonts/Proxima/ProximaNova-Regular.ttf') format('truetype'),
+        url('../fonts/Proxima/ProximaNova-Regular.otf') format('opentype'),
+        url('../fonts/Proxima/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-0491;
+}
+
+@font-face {
+    font-family:'Proxima Nova';
+    src: url('../fonts/Proxima/ProximaNova-SemiBold.eot');
+    src: url('../fonts/Proxima/ProximaNova-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima/ProximaNova-SemiBold.woff2') format('woff2'),
+        url('../fonts/Proxima/ProximaNova-SemiBold.woff') format('woff'),
+        url('../fonts/Proxima/ProximaNova-SemiBold.ttf') format('truetype'),
+        url('../fonts/Proxima/ProximaNova-SemiBold.otf') format('opentype'),
+        url('../fonts/Proxima/ProximaNova-SemiBold.svg#ProximaNova-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-0491;
+}
+
+@font-face {
+    font-family:'Proxima Nova';
+    src: url('../fonts/Proxima/ProximaNova-Bold.eot');
+    src: url('../fonts/Proxima/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Proxima/ProximaNova-Bold.woff2') format('woff2'),
+        url('../fonts/Proxima/ProximaNova-Bold.woff') format('woff'),
+        url('../fonts/Proxima/ProximaNova-Bold.ttf') format('truetype'),
+        url('../fonts/Proxima/ProximaNova-Bold.otf') format('opentype'),
+        url('../fonts/Proxima/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-0491;
+}

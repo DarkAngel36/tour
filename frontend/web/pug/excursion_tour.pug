@@ -1,0 +1,215 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Экскурсионные тур";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - -
+
+		.title_box.bg_blue
+			h1.white Экскурсионные туры
+
+		// - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		.breadcrumbs_container
+			.container
+				.row
+					.col-lg-12
+						ul.breadcrumbs.clearfix
+							li.breadcrumbs_it(data-bread-arr="/")
+								a(href="javascript:;" title="Экскурсионные туры")
+									span.breadcrumbs_current Экскурсионные туры
+							li.breadcrumbs_it(data-bread-arr="/")
+								span.breadcrumbs_current Нижний Новгород
+						a.back_link(href="excursion_tours.html") назад
+
+		// - - - - - - - - - - - - - End of .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .about_tour_container - - - - - - - - - - - - - - - -
+
+		.about_tour_container.indent_14
+			.container
+				.row
+					.col-md-4.col-md-offset-1.col-sm-5
+						.about_tour_img
+							img(src="images/church_sm.png", alt="")
+					.col-md-6.col-sm-7
+						div.about_tour_text
+
+							div.about_tour_top
+								div
+									h2.mb20 Болдино
+									h6.md Нижний Новгород
+								div
+									a.btn_orange.btn_w.reg(href="javascript:;") Скачать брошуру
+
+							div.about_tour_bottom
+								ul.mb25
+									li
+										span Стоимость тура:
+										span 15900 руб./школьник.
+									li
+										span  Доплата за взрослого в составе группы –
+										span 1800 руб.
+
+								div В стоимость входит:
+								ul.about_tour_list
+									li Ж/Д проезд туда/обратно (плацкарт)
+									li Питание 3-х разовое (завтрак, обед, ужин)
+									li Проживание в отеле «Маринс Парк» 2н./3дн.
+									li Транспортное обслуживание по программе
+									li Экскурсионное обслуживание по программе
+									li Входные билеты по программе
+									li 2 загородные поездки
+
+		// - - - - - - - - - - - - - End of .about_tour_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .carousel_container - - - - - - - - - - - - - - - -
+
+		.carousel_container.bg_blue_lite.indent_4
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						div.carousel_wrap
+							div.owl-carousel.js-carousel
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+								a.carousel_item(href="javascript:;")
+									img(src="images/cathedral.png", alt="")
+
+		// - - - - - - - - - - - - - End of .carousel_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .text_container - - - - - - - - - - - - - - - -
+
+		.text_container.indent_5
+			.container
+				.row
+					.col-lg-7.col-lg-offset-1
+						div.text_box
+							h6.mb34 Программа тура
+							div 1-ый день
+							ul.program_list
+								li Встреча группы на Ж/Д вокзале Казани. Отправление в Нижний Новгород.
+
+							div 2-й день
+							ul.program_list
+								li Завтрак в кафе города.
+								li Встреча с гидом.
+								li Автобусная обзорная экскурсия по городу. (Экскурсия  по территории Старого Канавино и рассказ о знаменитой Нижегородской Ярмарке- Кармане России. Осмотр Собора Александра Невского, возведенного в 50 года XIX века.Грандиозная высота собора (87 м) до сих пор обеспечивает ему третье место среди храмов России.
+								li Осмотр Нижне-Волжской набережной. Осмотр центральной площади Нижнего — Минина и Пожарского, которая возникла из двух соседствовавших до 1917 года площади Благовещенской и Семинарской. Посещение Нижегородского кремля — самого старого и впечатляющего архитектурного памятника в нашем городе, привольно раскинувшийся на вершинах Дятловых гор. Прогуляетесь по площади Минина, где увидите первый фонтан в городе. Осмотрите памятник Валерию Чкалову, который возглавляет одноименную лестницу.
+								li Обед в кафе города.
+								li Заселение в гостиницу 3* (номера с удобствами).
+								li Свободное время.
+								li Ужин в ресторане гостиницы.
+								li Ночь в отеле.
+
+							div 3-й день
+							ul.program_list
+								li Завтрак в ресторане гостиницы.
+								li Встреча с гидом в холле отеля.
+								li Отправление на загородную экскурсию в село Большое Болдино. Из путевой информации вы узнаете много интересного и неизвестного о Пушкине. По прибытию вас ждет обзорная экскурсия по селу. Посетите храм Успения Пресвятой Богородицы, построенного на деньги дедушки поэта и освященного в год рождения А.С. Пушкина. Прогуляетесь по парку к дерновой скамейке, вековым дубам.
+								li Обед в кафе города.
+								li Отправление на вторую часть экскурсионной программы. Посещение литературно-мемориального и природного музея - заповедник «Болдино». Экскурсия включает в себя знакомство с экспозицией дома-музея и осмотр усадьбы (парк, вотчинная контора и другие усадебные постройки). Экспозиция дома посвящена пребыванию Пушкина в Болдино, его творчеству, отмеченному небывалым взлетом вдохновения в осенние месяцы 1830 и 1833 гг. Отдельно стоящий домик вотчинной конторы знакомит с хозяйственной стороной жизни болдинского имения. В других усадебных постройках – людской, баньке, конюшне – размещаются выставки, рассказывающие о быте усадьбы, примечательных явлениях крестьянской культуры, народных промыслах.
+								li Отправление в Нижний Новгород.
+								li Ужин в ресторане гостиницы.
+								li Ночь в отеле.
+
+							div 4-й день
+							ul.program_list
+								li Завтрак в ресторане гостиницы.
+								li Освобождение номеров.
+								li Встреча с гидом в холле отеля.
+								li Пешеходная экскурсия по городу.
+								li Посещение усадьбы Руковишниковых.
+								li Обед в кафе города.
+								li Посещение музея-квартиры Горького.
+								li Трансфер на вокзал.
+								li Ужин в кафе города.
+								li Посадка на поезд.
+								li Отправление в Казань.
+
+							div 5-й день
+							ul.program_list
+								li Прибытие в Казань.
+
+		// - - - - - - - - - - - - - End of .text_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================

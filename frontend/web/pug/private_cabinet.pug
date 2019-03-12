@@ -1,0 +1,262 @@
+extends ../pug/templates/main
+
+block vars
+	- var title = "Личный кабинет";
+	- var headerClasses = ['header1'];
+	//- - var footerClasses = ['footer1'];
+
+//- block title
+//- 	| Главная страница
+
+
+//- Content Start     ============================================
+
+
+block content
+
+	// Content Start     ============================================
+
+	main#content
+
+		// - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - -
+
+		.title_box.bg_blue
+			h1.white Личный кабинет
+
+		// - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - -
+
+		.private_office
+			.container
+				.row
+					.col-xs-12.al_right
+						.private_name
+							span Иванов Иван Иванович
+							ul.private_dropdown
+								li
+									a(href="javascript:;") Личный кабинет
+								li
+									a(href="javascript:;") Редактировать
+								li
+									a(href="javascript:;") Выйти
+
+
+		// - - - - - - - - - - - - - End of private_office - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		.breadcrumbs_container
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						ul.breadcrumbs.clearfix
+							li.breadcrumbs_it.fz18(data-bread-arr="/")
+								a(href="javascript:;" title="Личный кабинет")
+									span.breadcrumbs_current Личный кабинет
+							li.breadcrumbs_it.fz18(data-bread-arr="/")
+								span.breadcrumbs_current Группа 1
+
+		// - - - - - - - - - - - - - End of .breadcrumbs_container - - - - - - - - - - - - - - - -
+
+		// - - - - - - - - - - - - - group_container - - - - - - - - - - - - - - - -
+
+		.group_container.p_t_zero.indent_2
+			.container
+				.row
+					.col-lg-10.col-lg-offset-1
+						h3.mb20 Группа 1
+
+				.row.group_wrap_resp.mb53
+					.col-lg-4.col-lg-offset-1.col-md-6.col-sm-6
+						div.group_info
+							h4.mb13 Анапа
+							h6.md.mb20 База отдыха «Чайка»
+							ul.group_list
+								li
+									div ФИО
+									div Иванов Иван Иванович
+								li
+									div Период тура
+									div 15.08.2018 — 23.06.2018
+								li
+									div Категория номера
+									div Эконом
+								li
+									div Тип тура
+									div Железнодорожный
+								li
+									div Количество человек
+									div 12
+								li
+									div Тип размещения
+									div.group_list_item
+										div 1 номер — 2 взрослых
+										div 1 номер — 1 взрослых
+										div 1 номер — 2 взрослых
+										a.link-bd.reg(href="javascript:;") + Добавить номер
+							div.group_price
+								span Сумма к оплате
+								span 84 000 рублей
+							a.btn_orange.btn_w.btn_uppercase(href="javascript:;") ОПЛАТИТЬ
+
+					.col-lg-4.col-lg-offset-1.col-md-5.col-md-offset-1.col-sm-6.top_767
+						.group_slider_box
+							div.js-slick.slider-for
+								div
+									img(src="images/pool.png", alt="")
+								div
+									img(src="images/church_sm.png", alt="")
+								div
+									img(src="images/pool.png", alt="")
+								div
+									img(src="images/church_sm.png", alt="")
+								div
+									img(src="images/pool.png", alt="")
+								div
+									img(src="images/church_sm.png", alt="")
+								div
+									img(src="images/pool.png", alt="")
+								div
+									img(src="images/church_sm.png", alt="")
+
+
+							div.js-slick.slider-nav
+								div
+									img(src="images/cafe.png", alt="")
+								div
+									img(src="images/house.png", alt="")
+								div
+									img(src="images/cafe.png", alt="")
+								div
+									img(src="images/house.png", alt="")
+								div
+									img(src="images/cafe.png", alt="")
+								div
+									img(src="images/house.png", alt="")
+								div
+									img(src="images/cafe.png", alt="")
+								div
+									img(src="images/house.png", alt="")
+
+				.row
+					.col-lg-10.col-lg-offset-1
+						h5.black.md.mb22 Список группы
+						table.table_list
+							thead
+								tr
+									th №
+									th Фамилия
+									th Имя
+									th Отчество
+									th Пол
+									th Паспорт
+									th Телефон
+									th E-mail
+							col(width="53")
+							tr
+								td(data-table-title="№") 1
+								td(data-table-title="Фамилия") Дмитриев
+								td(data-table-title="Имя") Дмитрий
+								td(data-table-title="Отчество") Дмитриевич
+								td(data-table-title="Пол") муж
+								td(data-table-title="Паспорт") 9411950180
+								td(data-table-title="Телефон") 89123452134
+								td(data-table-title="E-mail") fretghy@yandex.ru
+							tr
+								td(data-table-title="№") 1
+								td(data-table-title="Фамилия") Дмитриев
+								td(data-table-title="Имя") Дмитрий
+								td(data-table-title="Отчество") Дмитриевич
+								td(data-table-title="Пол") муж
+								td(data-table-title="Паспорт") 9411950180
+								td(data-table-title="Телефон") 89123452134
+								td(data-table-title="E-mail") fretghy@yandex.ru
+							tr
+								td(data-table-title="№") 1
+								td(data-table-title="Фамилия") Дмитриев
+								td(data-table-title="Имя") Дмитрий
+								td(data-table-title="Отчество") Дмитриевич
+								td(data-table-title="Пол") муж
+								td(data-table-title="Паспорт") 9411950180
+								td(data-table-title="Телефон") 89123452134
+								td(data-table-title="E-mail") fretghy@yandex.ru
+							tr
+								td(data-table-title="№") 1
+								td(data-table-title="Фамилия") Дмитриев
+								td(data-table-title="Имя") Дмитрий
+								td(data-table-title="Отчество") Дмитриевич
+								td(data-table-title="Пол") муж
+								td(data-table-title="Паспорт") 9411950180
+								td(data-table-title="Телефон") 89123452134
+								td(data-table-title="E-mail") fretghy@yandex.ru
+							tr.table_tr_input
+								td(data-table-title="№"): div: input(type="text")
+								td(data-table-title="Фамилия"): div: input(type="text")
+								td(data-table-title="Имя"): div: input(type="text")
+								td(data-table-title="Отчество"): div: input(type="text")
+								td(data-table-title="Пол"): div: input(type="text")
+								td(data-table-title="Паспорт"): div: input(type="text")
+								td(data-table-title="Телефон"): div: input(type="text")
+								td(data-table-title="E-mail"): div: input(type="text")
+
+							tr.table_tr_add
+								td(colspan="8")
+									span.js-add-tr +Добавить
+						.after_table
+							a.js-save-table.link-bd(href="javascript:;") Сохранить
+						.agent_link_box.variant2.clearfix
+							a.link-bd.link-blue-lite.md.f_left(href="#") Отменить заявку
+							a.link-lg.link-uppercase.md(href="javascript:;") Договор агентам
+							a.link-lg.link-uppercase.md(href="javascript:;") Реестровый номер
+
+
+		// - - - - - - - - - - - - - End of group_container - - - - - - - - - - - - - - - -
+
+	// Content End       ============================================
+
+
+//- Content End       ============================================
+
+
+
+//- Popup Start     ============================================
+
+
+block popup
+
+	// Popup Start     ============================================
+
+	div(class="d_none")
+
+		#request_popup.arcticmodal_container_box
+			.arcticmodal-close &times;
+			div Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90
+
+		#enter_popup.arcticmodal_container_box.popup_indent
+			.arcticmodal-close &times;
+			h3.md.al_center.mb30 Вход для агентов
+			form.agent_registration_form
+				.form_row.mb20
+					.form_label E-mail
+					input.form_input(type="text")
+				.form_row.mb30
+					.form_label Пароль
+						span (
+							a.link-lg.link-blue-lite.link-bd(href="javascript:;") Забыли пароль?
+							|)
+					input.form_input.mb10(type="text")
+					div.al_right: a.link_reg.link-sm2.link-blue-lite.link-bd(href="javascript:;") Зарегистрироваться
+				.form_button
+					button.btn_orange.btn_w Войти
+
+		#pay_popup.arcticmodal_container_box.popup_indent2.al_center
+			.arcticmodal-close &times;
+			h2.md.mb40 Оплата
+			a.btn_w5.btn-blue.btn_size6.mb17(href="javascript:;") Оплата картой
+			a.btn_w5.btn-blue.btn_size6(href="javascript:;") Оплата по реквизитам
+
+	// Popup End       ============================================
+
+
+//- Popup End       ============================================
