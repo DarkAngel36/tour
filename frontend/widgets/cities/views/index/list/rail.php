@@ -12,7 +12,7 @@
                 <div class="rest_place mb137">
                     <?php foreach ($cities as $city):?>
                     <div class="rest_place_item">
-                        <img src="<?= $city->getImgUrl()?>" alt="" />
+                        <img src="<?= Cities::getImgUrl("main/{$city->id}")?>" alt="" />
                         <div>
                             <span class="rest_place_text2"><?= $city->name?></span>
                             <a class="btn_orange btn_w4 btn_size5" href="javascript:;">Подробнее</a>
