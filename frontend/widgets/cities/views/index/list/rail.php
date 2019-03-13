@@ -1,3 +1,10 @@
+<?php
+/**
+ * common\models\Cities $city
+ */
+
+
+?>
     <h2 class="al_center mb70">Железнодорожные туры</h2>
     <div class="container">
         <div class="row">
@@ -5,7 +12,7 @@
                 <div class="rest_place mb137">
                     <?php foreach ($cities as $city):?>
                     <div class="rest_place_item">
-                        <img src="<?= $city->getImg()?>" alt="" />
+                        <img src="<?= $city->getImgUrl()?>" alt="" />
                         <div>
                             <span class="rest_place_text2"><?= $city->name?></span>
                             <a class="btn_orange btn_w4 btn_size5" href="javascript:;">Подробнее</a>
