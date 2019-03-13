@@ -3,7 +3,7 @@
  * common\models\Cities $city
  */
 
-
+use common\models\Cities;
 ?>
     <h2 class="al_center mb70">Железнодорожные туры</h2>
     <div class="container">
