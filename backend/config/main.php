@@ -12,6 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
+    'homeUrl' => '/admin',
     'modules' => [
         'markdown' => [
             'class' => 'kartik\markdown\Module',
@@ -23,6 +24,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
+            'baseUrl' => '/admin',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
@@ -45,13 +47,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-/*        'urlManager' => [
+        'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 'hotels-period/index/<hotel_id>' => 'hotels-period/index'
             ],
-        ],*/
+        ],
     ],
     'params' => $params,
 ];
