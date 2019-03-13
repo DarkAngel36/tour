@@ -35,7 +35,7 @@ use common\widgets\Alert;
 
     <!-- Favicon     ============================================-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="<?= Yii::getAlias('web')?>/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="images/favicon-16.png" sizes="16x16" type="image/png" />
     <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png" />

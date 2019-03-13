@@ -12,7 +12,7 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
-    'homeUrl' => '/admin',
+    'homeUrl' => '/backend/web',
     'modules' => [
         'markdown' => [
             'class' => 'kartik\markdown\Module',
@@ -24,7 +24,7 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
-            'baseUrl' => '/admin',
+            'baseUrl' => '/backend/web',
         ],
         'user' => [
             'identityClass' => 'common\models\User',
