@@ -12,9 +12,10 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 $tmp_id = $model->isNewRecord ? Yii::$app->session->getId() : $model->id;
 $initialPreviewArr = [
-    'main' => $model->isNewRecord ? $model->getImagesPreviewArr('main') : [],
-    'gallery' => $model->isNewRecord ? $model->getImagesPreviewArr('gallery') : [],
+    'main' => $model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+    'gallery' => $model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
 ];
+//die(print_r($initialPreviewArr));
 ?>
 
 <div class="tours-form">
@@ -76,7 +77,7 @@ $initialPreviewArr = [
                 'tmp_id' => $tmp_id,
                 'category' => 'main'
             ],
-            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => $img->caption]]),
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
             'deleteExtraData' => [
                 'source_id' => $model->id,
                 'source' => $model::className(),
@@ -97,7 +98,7 @@ $initialPreviewArr = [
         'pluginOptions' => [
             'multiple' => true,
             'uploadUrl' => Url::to(['/ajax/files-upload']),
-            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => $img->caption]]),
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
             'uploadExtraData' => [
                 'tour_id' => $model->id,
                 'source' => $model::className(),
@@ -113,7 +114,7 @@ $initialPreviewArr = [
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
             'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
+            'initialPreviewConfig' => []/*$initialPreviewArr['gallery']['initialPreviewCfg']*/,
         ]
     ]);?>
 

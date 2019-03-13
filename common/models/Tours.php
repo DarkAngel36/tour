@@ -146,6 +146,7 @@ class Tours extends BaseModel
             $src = self::getTmpImgPath($tmp_id);
             $dst = self::getTmpImgPath($this->id);
 
+            FileHelper::createDirectory($src);
             FileHelper::copyDirectory($src, $dst);
             FileHelper::removeDirectory($src);
         }

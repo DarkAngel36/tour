@@ -35,7 +35,7 @@ $initialPreviewArr = $model->getImagesPreviewArr('main');
         ],
         'pluginOptions' => [
             'uploadUrl' => Url::to(['/ajax/file-upload']),
-            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => $img->caption]]),
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
             'uploadExtraData' => [
                 'tour_id' => $model->id,
                 'source' => $model::className(),

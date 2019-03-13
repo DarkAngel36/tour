@@ -20,7 +20,7 @@ class AjaxController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+/*    public function behaviors()
     {
         return [
             'verbs' => [
@@ -30,7 +30,7 @@ class AjaxController extends Controller
                 ],
             ],
         ];
-    }
+    }*/
 
     public function actionFileUpload()
     {

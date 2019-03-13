@@ -49,6 +49,7 @@ class BaseModel extends \yii\db\ActiveRecord
 
     public static function prepareImage($class, $id, $add)
     {
+        FileHelper::createDirectory($class::getTmpImgPath("$id\\$add"));
         $files = FileHelper::findFiles($class::getTmpImgPath("$id\\$add"));
         $sizes = $class::getSizes();
 
@@ -78,8 +79,9 @@ class BaseModel extends \yii\db\ActiveRecord
         $initialPreview = [];
         $initialPreviewCfg = [];
         $class = self::className();
-
+        
         $path = FileHelper::normalizePath($class::getTmpImgPath("{$this->id}//{$add}" ));
+        FileHelper::createDirectory($path);
         if(is_dir($path)) {
             $images = FileHelper::findFiles($path, ['recursive' => false]);
             foreach ($images as $ind => $image) {

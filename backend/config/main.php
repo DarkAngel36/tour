@@ -45,13 +45,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'urlManager' => [
+/*        'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 'hotels-period/index/<hotel_id>' => 'hotels-period/index'
             ],
-        ],
+        ],*/
     ],
     'params' => $params,
 ];
