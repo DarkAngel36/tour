@@ -4,7 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\helpers\ArrayHelper;
-
+use yii\helpers\FileHelper;
 /**
  * This is the model class for table "cities".
  *
@@ -138,6 +138,10 @@ class Cities extends BaseModel
 
     public static function getImgUrl($add)
     {
-        return '/images/cities/' . (!empty($add) ? $add . '/' : '');
+        $path = '/images/cities/' . (!empty($add) ? $add . '/' : '');
+        $images = FileHelper::findFiles(Yii::$app->basePath . $path, ['recursive' => false]);
+
+        dir(print_r($images));
     }
+
 }

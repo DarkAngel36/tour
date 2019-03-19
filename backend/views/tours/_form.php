@@ -81,7 +81,7 @@ $initialPreviewArr = [
             'deleteExtraData' => [
                 'source_id' => $model->id,
                 'source' => $model::className(),
-                'category' => 'gallery'
+                'category' => 'main'
             ],
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
@@ -114,7 +114,7 @@ $initialPreviewArr = [
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
             'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
-            'initialPreviewConfig' => []/*$initialPreviewArr['gallery']['initialPreviewCfg']*/,
+            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
         ]
     ]);?>
 

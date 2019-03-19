@@ -11,8 +11,12 @@ use common\models\Cities;
             <div class="col-xs-12">
                 <div class="rest_place mb137">
                     <?php foreach ($cities as $city):?>
+                    <?php
+                    $imgs = $city->getImagesPreview('main', '268x267');
+//                    die(print_r($imgs));
+                    ?>
                     <div class="rest_place_item">
-                        <img src="<?= Cities::getImgUrl("main/{$city->id}")?>" alt="" />
+                        <img src="<?= $imgs['initialPreview'][0]?>" alt="" />
                         <div>
                             <span class="rest_place_text2"><?= $city->name?></span>
                             <a class="btn_orange btn_w4 btn_size5" href="javascript:;">Подробнее</a>
