@@ -10,11 +10,21 @@ use yii\helpers\Url;
 /* @var $this yii\web\View */
 /* @var $model common\models\Hotels */
 /* @var $form yii\widgets\ActiveForm */
+
+$tmp_id = $model->isNewRecord ? Yii::$app->session->getId() : $model->id;
+$initialPreviewArr = [
+    'main' => !$model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+    'gallery' => !$model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+];
 ?>
 
 <div class="hotels-form">
 
     <?php $form = ActiveForm::begin(); ?>
+
+    <input type="hidden" name="tmp_id" value="<?= $tmp_id?>">
+
+    <?= $form->field($model, 'tmp_id')->hiddenInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -29,9 +39,59 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'img_list')->textInput() ?>
+    <?= $form->field($model, 'img')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*'],
+        'pluginEvents' => [
+            "fileuploaded" => "function(event, data, previewId, index) { var name = data.response.fileName; $(\"input[name='Tours[img]'][type='hidden']\").val( name ); return false; }",
+        ],
+        'pluginOptions' => [
+            'uploadUrl' => Url::to(['/ajax/file-upload']),
+            'uploadExtraData' => [
+                'tour_id' => $model->id,
+                'source' => $model::className(),
+                'tmp_id' => $tmp_id,
+                'category' => 'main'
+            ],
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
+            'deleteExtraData' => [
+                'source_id' => $model->id,
+                'source' => $model::className(),
+                'category' => 'main'
+            ],
+            'maxFileCount' => 10,
+            'overwriteInitial'=>false,
+            'initialPreviewAsData'=>true,
+            'initialPreview' => $initialPreviewArr['main']['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArr['main']['initialPreviewCfg'],
+        ]
+    ]);?>
+    <?= $form->field($model, 'img_list')->widget(FileInput::classname(), [
+        'options' => ['accept' => 'image/*', 'multiple' => true,],
+        'pluginEvents' => [
+            "fileuploaded" => "function(event, data, previewId, index) { var name = data.response.fileName; $(\"input[name='Tours[img_list]'][type='hidden']\").val( $(\"input[name='Tours[img_list]'][type='hidden']\").val() + ',' + name ); return false; }",
+        ],
+        'pluginOptions' => [
+            'multiple' => true,
+            'uploadUrl' => Url::to(['/ajax/files-upload']),
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
+            'uploadExtraData' => [
+                'tour_id' => $model->id,
+                'source' => $model::className(),
+                'tmp_id' => $tmp_id,
+                'category' => 'gallery'
+            ],
+            'deleteExtraData' => [
+                'source_id' => $model->id,
+                'source' => $model::className(),
+                'category' => 'gallery'
+            ],
+            'maxFileCount' => 10,
+            'overwriteInitial'=>false,
+            'initialPreviewAsData'=>true,
+            'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
+        ]
+    ]);?>
 
     <?= $form->field($model, 'status')->widget(Select2::classname(), [
         'data' => \common\models\Cities::getStatusesList(),

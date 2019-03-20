@@ -12,8 +12,8 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 $tmp_id = $model->isNewRecord ? Yii::$app->session->getId() : $model->id;
 $initialPreviewArr = [
-    'main' => $model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
-    'gallery' => $model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+    'main' => !$model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+    'gallery' => !$model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
 ];
 //die(print_r($initialPreviewArr));
 ?>
@@ -29,6 +29,8 @@ $initialPreviewArr = [
     <input type="hidden" name="tmp_id" value="<?= $tmp_id?>">
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'cost')->textInput(['maxlength' => true, 'placeholder' => '15900 руб./школьник']) ?>
 
     <?= $form->field($model, 'city_id')->widget(Select2::classname(), [
         'data' => \common\models\Cities::getCitiesFrom(),
@@ -50,6 +52,11 @@ $initialPreviewArr = [
     ]) ?>
 
     <?= $form->field($model, 'info')->widget(
+        MarkdownEditor::classname(),
+        ['height' => 200, 'encodeLabels' => false]
+    ) ?>
+
+    <?= $form->field($model, 'short_description')->widget(
         MarkdownEditor::classname(),
         ['height' => 200, 'encodeLabels' => false]
     ) ?>
@@ -81,7 +88,7 @@ $initialPreviewArr = [
             'deleteExtraData' => [
                 'source_id' => $model->id,
                 'source' => $model::className(),
-                'category' => 'gallery'
+                'category' => 'main'
             ],
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
@@ -114,7 +121,7 @@ $initialPreviewArr = [
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
             'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
-            'initialPreviewConfig' => []/*$initialPreviewArr['gallery']['initialPreviewCfg']*/,
+            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
         ]
     ]);?>
 

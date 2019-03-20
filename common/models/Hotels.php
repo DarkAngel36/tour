@@ -17,14 +17,36 @@ use Yii;
  *
  * @property HotelsPeriod[] $hotelsPeriods
  */
-class Hotels extends \yii\db\ActiveRecord
+class Hotels extends BaseModel
 {
+    public $tmp_id;
+
+    public static function getSizes()
+    {
+        return [
+            'main' => [
+                ['w' => 268, 'h' => 216],
+                ['w' => 368, 'h' => 276]
+            ],
+            'gallery' => [
+                ['w' => 168, 'h' => 144]
+            ]
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
         return 'hotels';
+    }
+
+    public function behaviors()
+    {
+        return [
+//            TimestampBehavior::className(),
+        ];
     }
 
     /**
@@ -36,7 +58,7 @@ class Hotels extends \yii\db\ActiveRecord
             [['name', 'city_id'], 'required'],
             [['city_id', 'status'], 'integer'],
             [['description'], 'string'],
-            [['img_list'], 'safe'],
+            [['img_list', 'tmp_id'], 'safe'],
             [['name', 'img'], 'string', 'max' => 255],
         ];
     }
@@ -71,5 +93,18 @@ class Hotels extends \yii\db\ActiveRecord
     public function getCity()
     {
         return $this->hasOne(Cities::className(), ['id' => 'city_id']);
+    }
+
+    public static function getTmpImgPath($add)
+    {
+        return \Yii::$app->basePath . '/../frontend/web/images/hotels/' . (!empty($add) ? $add . '/' : '');
+    }
+
+    public static function getImgUrl($add)
+    {
+        $path = '/images/hotels/' . (!empty($add) ? $add . '/' : '');
+        $images = FileHelper::findFiles(Yii::$app->basePath . $path, ['recursive' => false]);
+
+        dir(print_r($images));
     }
 }

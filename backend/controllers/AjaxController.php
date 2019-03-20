@@ -56,6 +56,7 @@ class AjaxController extends Controller
         $post = \Yii::$app->request->post();
         $modelName = str_replace('common\models\\', '', $post['source']);
         $data = UploadedFile::getInstanceByName($modelName.'[img_list]');
+//        print_r($data);
         $class = $post['source'];
 
         $fileNameArr = explode( '.', $data->name );

@@ -2,32 +2,31 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\select2\Select2;
 use kartik\file\FileInput;
 use yii\helpers\Url;
-
 /* @var $this yii\web\View */
-/* @var $model common\models\Cities */
+/* @var $model common\models\Pages */
 /* @var $form yii\widgets\ActiveForm */
 
 $tmp_id = $model->isNewRecord ? Yii::$app->session->getId() : $model->id;
-$initialPreviewArr = $model->getImagesPreviewArr('main');
+$initialPreviewArr = [
+    'main' => $model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+    'gallery' => $model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
+];
 ?>
 
-<div class="cities-form">
+<div class="pages-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-    <input type="hidden" name="tmp_id" value="<?= $model->isNewRecord ? Yii::$app->we==session_id() : $model->id?>">
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <input type="hidden" name="tmp_id", value="<?= $tmp_id?>">
+    <?= $form->field($model, 'tmp_id')->hiddenInput(['value' => $tmp_id])?>
 
-    <?= $form->field($model, 'direction')->widget(Select2::classname(), [
-        'data' => \common\models\Cities::directionNames(),
-        'language' => 'ru',
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]) ?>
+    <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'img')->widget(FileInput::classname(), [
         'options' => ['accept' => 'image/*'],
@@ -36,36 +35,28 @@ $initialPreviewArr = $model->getImagesPreviewArr('main');
         ],
         'pluginOptions' => [
             'uploadUrl' => Url::to(['/ajax/file-upload']),
-            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
             'uploadExtraData' => [
                 'tour_id' => $model->id,
                 'source' => $model::className(),
                 'tmp_id' => $tmp_id,
                 'category' => 'main'
             ],
+            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
             'deleteExtraData' => [
                 'source_id' => $model->id,
                 'source' => $model::className(),
                 'category' => 'main'
             ],
-            'maxFileCount' => 10,
+            'maxFileCount' => 1,
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
-            'initialPreview' => $initialPreviewArr['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArr['initialPreviewCfg'],
+            'initialPreview' => $initialPreviewArr['main']['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArr['main']['initialPreviewCfg'],
         ]
     ]);?>
 
-    <?= $form->field($model, 'status')->widget(Select2::classname(), [
-        'data' => \common\models\Cities::getStatusesList(),
-        'language' => 'ru',
-        'pluginOptions' => [
-            'allowClear' => true
-        ],
-    ]) ?>
-
     <div class="form-group">
-        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

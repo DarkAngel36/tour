@@ -268,11 +268,10 @@
 		});
 
 
-		$(window).load(function(){
+		$(document).ready(function(){
 
 
-			$('#request_popup').arcticmodal();
-
+			// $('#request_popup').arcticmodal();
 		});
 
 
