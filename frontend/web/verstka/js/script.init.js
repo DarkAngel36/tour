@@ -271,7 +271,7 @@
 		$(window).load(function(){
 
 
-			$('#request_popup').arcticmodal();
+//			$('#request_popup').arcticmodal();
 
 		});
 

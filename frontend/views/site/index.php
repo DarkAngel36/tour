@@ -2,29 +2,34 @@
 
 /* @var $this yii\web\View */
 
+use common\models\Cities;
 $this->title = 'My Yii Application';
+$citiesFrom = Cities::getCitiesFrom();
+$citiesTo = Cities::getCitiesTo();
 ?>
 <!-- - - - - - - - - - - - - - first_screen - - - - - - - - - - - - - - - --->
 <div class="first_screen" style="background-image: url(images/first_screen.svg);">
     <div class="container">
         <div class="first_box">
             <h4 class="fz26 white mb30 al_center">Подбор железнодорожного тура</h4>
-            <form class="railway_tour_form">
+            <form class="railway_tour_form" action="<?= \yii\helpers\Url::toRoute('/tours')?>">
                 <div class="form_row_col mb30">
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Откуда</label>
-                        <select class="styler form_select">
+                        <select class="styler form_select" name="cityFrom">
                             <option>Выберите город</option>
-                            <option>Выберите город</option>
-                            <option>Выберите город</option>
+                            <?php foreach($citiesFrom as $id => $cityFrom):?>
+                            <option value="<?= $id?>"><?= $cityFrom?></option>
+                            <?php endforeach?>
                         </select>
                     </div>
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Куда</label>
-                        <select class="styler form_select">
+                        <select class="styler form_select" name="city_id">
                             <option>Выберите город</option>
-                            <option>Выберите город</option>
-                            <option>Выберите город</option>
+                            <?php foreach($citiesTo as $id => $cityFrom):?>
+                                <option value="<?= $id?>"><?= $cityFrom?></option>
+                            <?php endforeach?>
                         </select>
                     </div>
                 </div>
@@ -42,10 +47,10 @@ $this->title = 'My Yii Application';
                         <div class="form_row_col">
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Взрослых</label>
-                                <input class="styler form_input_number" type="number" min="0" /> </div>
+                                <input class="styler form_input_number" type="number" min="0" value="1" name="parent" /> </div>
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Детей</label>
-                                <input class="styler form_input_number" type="number" min="0" /> </div>
+                                <input class="styler form_input_number" type="number" min="0" value="0" name="child" /> </div>
                         </div>
                     </div>
                 </div>

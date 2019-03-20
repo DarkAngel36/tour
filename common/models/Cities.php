@@ -120,7 +120,7 @@ class Cities extends BaseModel
      */
     public static function getCitiesFrom()
     {
-        return ArrayHelper::map(self::find()->where('status = 1 AND direction = 2')->all(), 'id', 'name');
+        return ArrayHelper::map(self::find()->where('status = 1 AND direction = 1')->all(), 'id', 'name');
     }
 
     /**
@@ -128,7 +128,7 @@ class Cities extends BaseModel
      */
     public static function getCitiesTo()
     {
-        return ArrayHelper::map(self::find()->where('status = 1 AND direction = 1')->all(), 'id', 'name');
+        return ArrayHelper::map(self::find()->where('status = 1 AND direction = 2')->all(), 'id', 'name');
     }
 
     public static function getTmpImgPath($add)

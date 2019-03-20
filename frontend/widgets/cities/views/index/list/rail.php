@@ -19,7 +19,7 @@ use common\models\Cities;
                         <img src="<?= $imgs['initialPreview'][0]?>" alt="" />
                         <div>
                             <span class="rest_place_text2"><?= $city->name?></span>
-                            <a class="btn_orange btn_w4 btn_size5" href="javascript:;">Подробнее</a>
+                            <a class="btn_orange btn_w4 btn_size5" href="<?= \yii\helpers\Url::toRoute(['/hotels/index', 'city_id' => $city->id])?>">Подробнее</a>
                         </div>
                     </div>
                     <?php endforeach?>

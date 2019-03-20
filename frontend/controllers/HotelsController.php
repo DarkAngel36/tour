@@ -8,18 +8,20 @@
 
 namespace frontend\controllers;
 
+use common\models\Hotels;
+use common\models\HotelsSearch;
 use common\models\Tours;
 use common\models\ToursSearch;
 use Yii;
 use yii\web\Controller;
 
-class ToursController extends Controller
+class HotelsController extends Controller
 {
     public function actionIndex()
     {
         $data = Yii::$app->request->get();
-        $search = new ToursSearch();
-        $dataProvider = $search->search(['ToursSearch' => $data]);
+        $search = new HotelsSearch();
+        $dataProvider = $search->search(['HotelsSearch' => $data]);
 //        $items = Tours::find()->where(['status' => 1])->all();
         return $this->render('list', ['items' => $dataProvider->models]);
     }
@@ -40,7 +42,7 @@ class ToursController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Tours::findOne($id)) !== null) {
+        if (($model = Hotels::findOne($id)) !== null) {
             return $model;
         }
 

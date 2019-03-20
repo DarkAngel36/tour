@@ -45,11 +45,11 @@ use common\widgets\Alert;
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;amp;subset=cyrillic" rel="stylesheet" />
     <link rel="stylesheet" media="screen" href="css/font.css" />
     <!-- Include Libs CSS     ============================================ -->
-    <link rel="stylesheet" media="screen" href="css/reset.css" />
-    <link rel="stylesheet" media="screen" href="css/bootstrap.css" />
+    <link rel="stylesheet" media="screen" href="/css/reset.css" />
+    <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
     <!-- Theme CSS     ============================================ -->
-    <link rel="stylesheet" media="screen" href="css/style.css" />
-    <link rel="stylesheet" media="screen" href="css/responsive.css" /> </head>
+    <link rel="stylesheet" media="screen" href="/css/style.css" />
+    <link rel="stylesheet" media="screen" href="/css/responsive.css" /> </head>
     <?php $this->head() ?>
 <!-- Head End       ============================================ -->
 <!-- Body Start     ============================================ -->
@@ -63,52 +63,69 @@ use common\widgets\Alert;
     </div>
     <!-- Preloader End       ============================================ -->
     <!-- Header Start     ============================================ -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="header_container">
-                        <!-- - - - - - - - - - - - - - Logo - - - - - - - - - - - - - - - --->
-                        <div class="logo">
-                            <a href="index.html">ИМПЕРИЯ
-                                <br>ТУРИЗМА и К</a>
+    <!-- <?= Yii::$app->controller->id?>-->
+    <!-- <?= Yii::$app->controller->action->id?>-->
+    <?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id='index'):?>
+        <?= $this->render('_index_header')?>
+    <?php else:?>
+        <?= $this->render('_page_header')?>
+    <?php endif?>
+    <!-- Header End       ============================================ -->
+    <!-- Content Start     ============================================-->
+    <main id="content">
+        <!-- - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - --->
+        <div class="title_box bg_blue">
+            <h1 class="white"><?= $this->title?></h1>
+        </div>
+        <!-- - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - --->
+        <!-- - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - --->
+        <?php if(!Yii::$app->user->isGuest):?>
+        <div class="private_office">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 al_right">
+                        <div class="private_name">
+                            <span>Иванов Иван Иванович</span>
+                            <ul class="private_dropdown">
+                                <li>
+                                    <a href="javascript:;">Личный кабинет</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Редактировать</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">Выйти</a>
+                                </li>
+                            </ul>
                         </div>
-                        <!-- - - - - - - - - - - - - - End of Logo - - - - - - - - - - - - - - - --->
-                        <!--  - - - - - - - - - - - - - Page Navigation - - - - - - - - - - - - - - - --->
-                        <nav class="navigation_menu" id="primary_nav">
-                            <div class="js-btn-menu">
-                                <span></span>
-                            </div>
-                            <menu class="menu" id="menu">
-                                <li class="menu_item">
-                                    <a class="menu_link" href="select_tour.html">Подбор тура</a>
-                                </li>
-                                <li class="menu_item">
-                                    <a class="menu_link" href="excursion_tours.html">Экскурсионные туры</a>
-                                </li>
-                                <li class="menu_item">
-                                    <a class="menu_link" href="javascript:;">Черное море</a>
-                                </li>
-                                <li class="menu_item">
-                                    <a class="menu_link" href="javascript:;">Агенствам</a>
-                                </li>
-                                <li class="menu_item">
-                                    <a class="menu_link" href="javascript:;">Туристам</a>
-                                </li>
-                                <li class="menu_item">
-                                    <a class="menu_link" href="contacts.html">Контакты</a>
-                                </li>
-                            </menu>
-                        </nav>
-                        <!--  - - - - - - - - - - - - - End of Page Navigation - - - - - - - - - - - - - - - --->
                     </div>
                 </div>
             </div>
         </div>
-    </header>
-    <!-- Header End       ============================================ -->
-    <!-- Content Start     ============================================-->
-    <main id="content">
+
+    <?php endif;?>
+<?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id='index'):?>
+<?php else:?>
+        <!-- - - - - - - - - - - - - - .breadcrumbs_container - - - - - - - - - - - - - - - --->
+        <div class="breadcrumbs_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+
+            <?= Breadcrumbs::widget([
+            'itemTemplate' => '<li class="breadcrumbs_it fz18" data-bread-arr="/"><span class="breadcrumbs_current">{link}</span></li>'."\n",
+            'activeItemTemplate' => '<li class="breadcrumbs_it fz18" data-bread-arr="/"><span class="breadcrumbs_current">{link}</span></li>'."\n",
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            'options' => ['class'=>'breadcrumbs clearfix']
+        ]) ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- - - - - - - - - - - - - - End of .breadcrumbs_container - - - - - - - - - - - - - - - --->
+        <?php endif?>
+        <!-- - - - - - - - - - - - - - End of private_office - - - - - - - - - - - - - - - --->
         <?= $content ?>
     </main>
     <!-- Content End       ============================================-->
@@ -236,14 +253,20 @@ use common\widgets\Alert;
     <!-- Popup End       ============================================-->
 </div>
 <!-- Include Libs     ============================================ -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery-migrate-3.0.1.min.js"></script>
 <!-- Include Libs End       ============================================ -->
 <!-- Scripts Init Plugins & Core START     ============================================ -->
-<script src="js/script.init.js"></script>
-<script src="js/script.core.js"></script>
+<script src="/js/script.init.js"></script>
+<script src="/js/script.core.js"></script>
 <!-- Scripts Init Plugins & Core END       ============================================ -->
 <?php $this->endBody() ?>
+<style>
+    .indent_11 {
+        padding-top: 35px;
+        padding-bottom: 93px;
+    }
+</style>
 </body>
 <!-- Body End       ============================================ -->
 </html>
