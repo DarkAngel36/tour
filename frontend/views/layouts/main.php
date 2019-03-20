@@ -143,22 +143,22 @@ use common\widgets\Alert;
                             <div class="footer_box">
                                 <ul class="footer_list">
                                     <li>
-                                        <a href="javascript:;">Подбор тура</a>
+                                        <a href="/tours">Подбор тура</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Экскурсионные туры</a>
+                                        <a href="/tours">Экскурсионные туры</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Черное море</a>
+                                        <a href="/hotels">Черное море</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Агенствам</a>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['/pgae/view', 'id' => 2])?>">Агенствам</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Туристам</a>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['/pgae/view', 'id' => 3])?>">Туристам</a>
                                     </li>
                                     <li>
-                                        <a href="javascript:;">Контакты</a>
+                                        <a href="<?= \yii\helpers\Url::toRoute(['/pgae/view', 'id' => 4])?>">Контакты</a>
                                     </li>
                                 </ul>
                             </div>
