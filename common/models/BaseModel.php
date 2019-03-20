@@ -50,13 +50,13 @@ class BaseModel extends \yii\db\ActiveRecord
 
     public static function prepareImage($class, $id, $add)
     {
-        FileHelper::createDirectory($class::getTmpImgPath("$id\\$add"));
-        $files = FileHelper::findFiles($class::getTmpImgPath("$id\\$add"));
+        FileHelper::createDirectory($class::getTmpImgPath("$id/$add"));
+        $files = FileHelper::findFiles($class::getTmpImgPath("$id/$add"));
         $sizes = $class::getSizes();
 
         foreach($files as $file) {
             foreach($sizes[$add] as $size) {
-                self::prepareImageSizes($class, $file, $size['w'], $size['h'], $class::getTmpImgPath("$id\\$add"));
+                self::prepareImageSizes($class, $file, $size['w'], $size['h'], $class::getTmpImgPath("$id/$add"));
             }
         }
 
@@ -67,10 +67,10 @@ class BaseModel extends \yii\db\ActiveRecord
 //        $w = $img->getSize()->getWidth();
 //        $h = $img->getSize()->getHeight();
         $path .= $nw . 'x' . $nh;
-        $tmp = explode('\\', $fileName);
+        $tmp = explode('/', $fileName);
 //        die(print_r($path));
         FileHelper::createDirectory($path);
-        $img->thumbnail(new Box($nw, $nh), ImageInterface::THUMBNAIL_OUTBOUND/*THUMBNAIL_INSET*/)->save($path . "\\" .$tmp[count($tmp)-1]);
+        $img->thumbnail(new Box($nw, $nh), ImageInterface::THUMBNAIL_OUTBOUND/*THUMBNAIL_INSET*/)->save($path . "/" .$tmp[count($tmp)-1]);
 
         return true;
     }
@@ -127,16 +127,16 @@ class BaseModel extends \yii\db\ActiveRecord
         $sizes = $class::getSizes();
 
         foreach($sizes[$type] as $size) {
-            $path = $originalPath . "\\" .$size['w'] . 'x' . $size['h'];
-            $fileName = "$path\\$img";
+            $path = $originalPath . "/" .$size['w'] . 'x' . $size['h'];
+            $fileName = "$path/$img";
 //            die(print_r([$fileName]));
             if(file_exists($fileName)) {
                 FileHelper::unlink($fileName);
             }
         }
 //        print_r(["$originalPath\\$img"]);die();
-        if(file_exists("$originalPath\\$img")) {
-            FileHelper::unlink("$originalPath\\$img");
+        if(file_exists("$originalPath/$img")) {
+            FileHelper::unlink("$originalPath/$img");
         }
     }
 
