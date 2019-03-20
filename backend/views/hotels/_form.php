@@ -86,8 +86,8 @@ $initialPreviewArrG = $model->getImagesPreviewArr('gallery');
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
-            'initialPreview' => $initialPreviewArrMG['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArrMG['initialPreviewCfg'],
+            'initialPreview' => $initialPreviewArrG['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArrG['initialPreviewCfg'],
         ]
     ]);?>
 
