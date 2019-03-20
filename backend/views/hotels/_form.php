@@ -12,10 +12,8 @@ use yii\helpers\Url;
 /* @var $form yii\widgets\ActiveForm */
 
 $tmp_id = $model->isNewRecord ? Yii::$app->session->getId() : $model->id;
-$initialPreviewArr = [
-    'main' => !$model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
-    'gallery' => !$model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
-];
+$initialPreviewArrM = $model->getImagesPreviewArr('main');
+$initialPreviewArrG = $model->getImagesPreviewArr('gallery');
 ?>
 
 <div class="hotels-form">
@@ -61,8 +59,8 @@ $initialPreviewArr = [
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
-            'initialPreview' => $initialPreviewArr['main']['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArr['main']['initialPreviewCfg'],
+            'initialPreview' => $initialPreviewArrM['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArrM['initialPreviewCfg'],
         ]
     ]);?>
     <?= $form->field($model, 'img_list')->widget(FileInput::classname(), [
@@ -88,8 +86,8 @@ $initialPreviewArr = [
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
-            'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
+            'initialPreview' => $initialPreviewArrMG['initialPreview'],
+            'initialPreviewConfig' => $initialPreviewArrMG['initialPreviewCfg'],
         ]
     ]);?>
 
