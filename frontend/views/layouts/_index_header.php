@@ -5,7 +5,7 @@
                 <div class="header_container">
                     <!-- - - - - - - - - - - - - - Logo - - - - - - - - - - - - - - - --->
                     <div class="logo">
-                        <a href="/">(ind)ИМПЕРИЯ
+                        <a href="/">ИМПЕРИЯ
                             <br>ТУРИЗМА и К</a>
                     </div>
                     <!-- - - - - - - - - - - - - - End of Logo - - - - - - - - - - - - - - - --->
