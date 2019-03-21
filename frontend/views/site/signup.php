@@ -9,6 +9,7 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'Личный кабинет';
 $this->params['breadcrumbs'][] = $this->title;
+print_r($model->errors);
 ?>
 <!-- - - - - - - - - - - - - - something_container - - - - - - - - - - - - - - - --->
 <section class="indent">

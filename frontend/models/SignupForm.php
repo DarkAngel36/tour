@@ -26,12 +26,11 @@ class SignupForm extends Model
     {
         return [
             ['username', 'trim'],
-            ['username', 'required'],
+//            ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
-            [['first_name', 'middle_name', 'last_name'], 'string'],
+            [['phone', 'first_name', 'middle_name', 'last_name'], 'string'],
 
-            ['phone', 'string'],
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -59,6 +58,11 @@ class SignupForm extends Model
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
+        $user->first_name = $this->first_name;
+        $user->middle_name = $this->middle_name;
+        $user->last_name = $this->last_name;
+        $user->phone = $this->phone;
+        $user->status = 1;
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;
