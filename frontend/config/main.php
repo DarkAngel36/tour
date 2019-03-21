@@ -46,7 +46,21 @@ return [
                 'tour/<id:\d+>' => 'tours/view'
             ],
         ],
-
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => [
+                        '/js/jquery-3.2.1.min.js',
+                        '/js/jquery-migrate-3.0.1.min.js',
+                        '/js/script.init.js',
+                        '/js/script.core.js'
+                    ]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

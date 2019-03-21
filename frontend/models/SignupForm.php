@@ -10,8 +10,13 @@ use common\models\User;
 class SignupForm extends Model
 {
     public $username;
+    public $first_name;
+    public $middle_name;
+    public $last_name;
     public $email;
     public $password;
+    public $repeat_password;
+    public $phone;
 
 
     /**
@@ -24,15 +29,18 @@ class SignupForm extends Model
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
+            [['first_name', 'middle_name', 'last_name'], 'string'],
 
+            ['phone', 'string'],
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
 
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            [['password', 'repeat_password'], 'required'],
+            [['password', 'repeat_password'], 'string', 'min' => 6],
+            ['password', 'compare', 'compareAttribute'=>'repeat_password'],
         ];
     }
 
@@ -54,5 +62,17 @@ class SignupForm extends Model
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'first_name' => 'Имя',
+            'last_name' => 'Фамилия',
+            'middle_name' => 'Отчество',
+            'phone' => 'Телефон',
+            'password' => 'Придумайте пароль (не менее 8 символов)',
+            'repeat_password' => 'Повторите пароль'
+        ];
     }
 }

@@ -56,11 +56,13 @@ $citiesTo = Cities::getCitiesTo();
                 </div>
                 <div class="form_button">
                     <button class="btn_orange btn_w2 btn_size3 btn_uppercase reg">Подобрать</button>
+                    <?php if(Yii::$app->user->isGuest):?>
                     <div class="al_center">
                         <a class="link-sm link-white" href="javascript:;" data-popup="#enter_popup">Вход для агентов /
                             <span class="white2">Регистрация</span>
                         </a>
                     </div>
+                    <?php endif?>
                 </div>
             </form>
         </div>

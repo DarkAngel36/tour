@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
@@ -49,10 +50,12 @@ use common\widgets\Alert;
     <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
     <!-- Theme CSS     ============================================ -->
     <link rel="stylesheet" media="screen" href="/css/style.css" />
-    <link rel="stylesheet" media="screen" href="/css/responsive.css" /> </head>
+    <link rel="stylesheet" media="screen" href="/css/responsive.css" />
     <?php $this->head() ?>
 <!-- Head End       ============================================ -->
+</head>
 <!-- Body Start     ============================================ -->
+
 <body>
 <?php $this->beginBody() ?>
 <!--[if lte IE 9]><div class="browse-happy"><h3>You are using an <strong>outdated</strong> browser. Please<a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</h3></div><![end if]-->
@@ -65,7 +68,7 @@ use common\widgets\Alert;
     <!-- Header Start     ============================================ -->
     <!-- <?= Yii::$app->controller->id?>-->
     <!-- <?= Yii::$app->controller->action->id?>-->
-    <?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id='index'):?>
+    <?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id == 'index'):?>
         <?= $this->render('_index_header')?>
     <?php else:?>
         <?= $this->render('_page_header')?>
@@ -79,7 +82,7 @@ use common\widgets\Alert;
         </div>
         <!-- - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - --->
         <!-- - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - --->
-        <?php if(!Yii::$app->user->isGuest):?>
+        <?php if(!Yii::$app->user->isGuest && Yii::$app->controller->id !== 'site' && Yii::$app->controller->action->id !== 'index'):?>
         <div class="private_office">
             <div class="container">
                 <div class="row">
@@ -102,8 +105,7 @@ use common\widgets\Alert;
                 </div>
             </div>
         </div>
-
-    <?php endif;?>
+        <?php endif;?>
 <?php if(Yii::$app->controller->id == 'site' && Yii::$app->controller->action->id='index'):?>
 <?php else:?>
         <!-- - - - - - - - - - - - - - .breadcrumbs_container - - - - - - - - - - - - - - - --->
@@ -221,28 +223,8 @@ use common\widgets\Alert;
             <div class="arcticmodal-close">&times;</div>
             <div>Для отмены заявки, свяжитесь с нами по телефону +7 (819) 987-90-90</div>
         </div>
-        <div class="arcticmodal_container_box popup_indent" id="enter_popup">
-            <div class="arcticmodal-close">&times;</div>
-            <h3 class="md al_center mb30">Вход для агентов</h3>
-            <form class="agent_registration_form">
-                <div class="form_row mb20">
-                    <div class="form_label">E-mail</div>
-                    <input class="form_input" type="text" /> </div>
-                <div class="form_row mb30">
-                    <div class="form_label">Пароль
-                        <span>(
-                                    <a class="link-lg link-blue-lite link-bd" href="javascript:;">Забыли пароль?</a>)</span>
-                    </div>
-                    <input class="form_input mb10" type="text" />
-                    <div class="al_right">
-                        <a class="link_reg link-sm2 link-blue-lite link-bd" href="javascript:;">Зарегистрироваться</a>
-                    </div>
-                </div>
-                <div class="form_button">
-                    <button class="btn_orange btn_w">Войти</button>
-                </div>
-            </form>
-        </div>
+        <?= $this->render('_login')?>
+
         <div class="arcticmodal_container_box popup_indent2 al_center" id="pay_popup">
             <div class="arcticmodal-close">&times;</div>
             <h2 class="md mb40">Оплата</h2>
@@ -252,21 +234,23 @@ use common\widgets\Alert;
     </div>
     <!-- Popup End       ============================================-->
 </div>
+
+
 <!-- Include Libs     ============================================ -->
-<script src="/js/jquery-3.2.1.min.js"></script>
-<script src="/js/jquery-migrate-3.0.1.min.js"></script>
+<!--<script src="/js/jquery-3.2.1.min.js"></script>-->
+<!--<script src="/js/jquery-migrate-3.0.1.min.js"></script>-->
 <!-- Include Libs End       ============================================ -->
 <!-- Scripts Init Plugins & Core START     ============================================ -->
-<script src="/js/script.init.js"></script>
-<script src="/js/script.core.js"></script>
+<!--<script src="/js/script.init.js"></script>-->
+<!--<script src="/js/script.core.js"></script>-->
 <!-- Scripts Init Plugins & Core END       ============================================ -->
-<?php $this->endBody() ?>
 <style>
     .indent_11 {
         padding-top: 35px;
         padding-bottom: 93px;
     }
 </style>
+<?php $this->endBody() ?>
 </body>
 <!-- Body End       ============================================ -->
 </html>
