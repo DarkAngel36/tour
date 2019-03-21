@@ -30,7 +30,7 @@ use yii\widgets\Pjax;
 <!--        <input class="form_input mb10" type="text" />-->
         <?= Html::activePasswordInput($login, 'password', ['class' => 'form_input mb10'])?>
         <div class="al_right">
-            <a class="link_reg link-sm2 link-blue-lite link-bd" href="javascript:;">Зарегистрироваться</a>
+            <a data-pjax="0" class="link_reg link-sm2 link-blue-lite link-bd" href="/site/signup">Зарегистрироваться</a>
         </div>
     </div>
     <div class="form_button">
