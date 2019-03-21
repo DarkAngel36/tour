@@ -77,9 +77,11 @@ use common\widgets\Alert;
     <!-- Content Start     ============================================-->
     <main id="content">
         <!-- - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - --->
+<?php if(Yii::$app->controller->id !== 'site' && Yii::$app->controller->action->id !== 'index'):?>
         <div class="title_box bg_blue">
             <h1 class="white"><?= $this->title?></h1>
         </div>
+<?php endif?>
         <!-- - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - --->
         <!-- - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - --->
         <?php if(!Yii::$app->user->isGuest && Yii::$app->controller->id !== 'site' && Yii::$app->controller->action->id !== 'index'):?>
