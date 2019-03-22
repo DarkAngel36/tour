@@ -17,7 +17,7 @@ $initialPreviewArr = $model->getImagesPreviewArr('main');
 <div class="cities-form">
 
     <?php $form = ActiveForm::begin(); ?>
-    <input type="hidden" name="tmp_id" value="<?= $model->isNewRecord ? Yii::$app->we==session_id() : $model->id?>">
+    <input type="hidden" name="tmp_id" value="<?= $tmp_id?>">
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 

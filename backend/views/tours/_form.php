@@ -120,8 +120,8 @@ $initialPreviewArr = [
             'maxFileCount' => 10,
             'overwriteInitial'=>false,
             'initialPreviewAsData'=>true,
-            'initialPreview' => $initialPreviewArr['gallery']['initialPreview'],
-            'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
+            'initialPreview' => []/*$initialPreviewArr['gallery']['initialPreview']*/,
+            'initialPreviewConfig' => []/*$initialPreviewArr['gallery']['initialPreviewCfg']*/,
         ]
     ]);?>
 

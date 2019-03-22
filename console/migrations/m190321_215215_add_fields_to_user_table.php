@@ -14,7 +14,7 @@ class m190321_215215_add_fields_to_user_table extends Migration
     {
         $this->addColumn('{{%user}}', 'first_name', $this->string());
         $this->addColumn('{{%user}}', 'last_name', $this->string());
-        $this->addColumn('{{%user}}', 'middel_name', $this->string());
+        $this->addColumn('{{%user}}', 'middle_name', $this->string());
         $this->addColumn('{{%user}}', 'phone', $this->string());
     }
 
