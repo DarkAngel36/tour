@@ -217,6 +217,6 @@ class SiteController extends Controller
 
     public function actionUserLk()
     {
-        return $this->render('user-lk')
+        return $this->render('user-lk');
     }
 }
