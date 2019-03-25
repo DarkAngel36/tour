@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-4 col-lg-offset-1 col-md-5 col-md-offset-1 col-sm-6 top_767">
                 <div class="group_img2">
-                    <img src="images/fountain.png" alt="" />
+                    <img src="/images/fountain.png" alt="" />
                 </div>
             </div>
         </div>
@@ -190,7 +190,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -209,7 +209,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -228,7 +228,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -247,7 +247,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -266,7 +266,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -285,7 +285,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -304,7 +304,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -323,7 +323,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -342,7 +342,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -365,7 +365,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -380,7 +380,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -395,7 +395,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -410,7 +410,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -425,7 +425,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -440,7 +440,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20 reserved">в</div>
@@ -455,7 +455,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -470,7 +470,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
@@ -485,7 +485,7 @@
                                         <div class="railway_section_place last_place">н</div>
                                     </div>
                                     <div>
-                                        <img src="images/icons/black_cloud.svg" alt="" />
+                                        <img src="/images/icons/black_cloud.svg" alt="" />
                                     </div>
                                     <div>
                                         <div class="railway_section_place first_place mb20">в</div>
