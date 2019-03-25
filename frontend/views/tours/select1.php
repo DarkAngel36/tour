@@ -9,9 +9,9 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-8 col-lg-offset-2">
                 <h2 class="al_center mb56">Подбор железнодорожного тура</h2>
                 <div class="step_container">
-                    <a class="link-xl link-blue-lite bd current" href="select_tour.html">01. Подбор тура</a>
-                    <a class="link-xl link-blue-lite bd" href="select_tour2.html">02. Заполнение информации</a>
-                    <a class="link-xl link-blue-lite bd" href="select_tour3.html">03. Бронирование</a>
+                    <a class="link-xl link-blue-lite bd current" href="/tours/select1">01. Подбор тура</a>
+                    <a class="link-xl link-blue-lite bd" href="/tours/select2">02. Заполнение информации</a>
+                    <a class="link-xl link-blue-lite bd" href="/tours/select3">03. Бронирование</a>
                 </div>
             </div>
         </div>

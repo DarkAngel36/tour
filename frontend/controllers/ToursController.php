@@ -26,6 +26,28 @@ class ToursController extends Controller
         ]);
     }
 
+    public function actionSelect2()
+    {
+        $searchModel = new ToursSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('select2', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionSelect3()
+    {
+        $searchModel = new ToursSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('select3', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     public function actionIndex()
     {
         $data = Yii::$app->request->get();
