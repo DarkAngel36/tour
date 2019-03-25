@@ -36,15 +36,15 @@ use common\widgets\Alert;
 
     <!-- Favicon     ============================================-->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon-16.png" sizes="16x16" type="image/png" />
-    <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png" />
-    <link rel="icon" href="images/favicon-62.png" sizes="62x62" type="image/png" />
-    <link rel="icon" href="images/favicon-192.png" sizes="192x192" type="image/png" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="/images/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="/images/favicon-62.png" sizes="62x62" type="image/png" />
+    <link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png" />
     <!-- Include Fonts (Icons)     ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;amp;subset=cyrillic" rel="stylesheet" />
-    <link rel="stylesheet" media="screen" href="css/font.css" />
+    <link rel="stylesheet" media="screen" href="/css/font.css" />
     <!-- Include Libs CSS     ============================================ -->
     <link rel="stylesheet" media="screen" href="/css/reset.css" />
     <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
@@ -78,9 +78,9 @@ use common\widgets\Alert;
     <main id="content">
         <!-- - - - - - - - - - - - - - .title_box - - - - - - - - - - - - - - - --->
 <?php if(Yii::$app->controller->id !== 'site' && Yii::$app->controller->action->id !== 'index'):?>
-        <div class="title_box bg_blue">
-            <h1 class="white"><?= $this->title?></h1>
-        </div>
+<!--        <div class="title_box bg_blue">-->
+<!--            <h1 class="white">--><?//= $this->title?><!--</h1>-->
+<!--        </div>-->
 <?php endif?>
         <!-- - - - - - - - - - - - - - End of .title_box - - - - - - - - - - - - - - - --->
         <!-- - - - - - - - - - - - - - private_office - - - - - - - - - - - - - - - --->

@@ -3,6 +3,7 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "hotels".
@@ -106,5 +107,10 @@ class Hotels extends BaseModel
         $images = FileHelper::findFiles(Yii::$app->basePath . $path, ['recursive' => false]);
 
         dir(print_r($images));
+    }
+
+    public static function getList()
+    {
+        return ArrayHelper::map(self::find()->all(), 'id', 'name');
     }
 }

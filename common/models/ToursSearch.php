@@ -11,6 +11,8 @@ use common\models\Tours;
  */
 class ToursSearch extends Tours
 {
+    public $cityFrom, $cityTo, $parentsCount, $childCount, $hotel_id;
+
     /**
      * {@inheritdoc}
      */
@@ -18,7 +20,7 @@ class ToursSearch extends Tours
     {
         return [
             [['id', 'city_id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'info', 'options', 'programm'], 'safe'],
+            [['name', 'info', 'options', 'programm', 'cityFrom', 'cityTo', 'parentsCount', 'childCount', 'hotel_id'], 'safe'],
         ];
     }
 

@@ -15,6 +15,17 @@ use yii\web\Controller;
 
 class ToursController extends Controller
 {
+    public function actionSelect()
+    {
+        $searchModel = new ToursSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('select1', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     public function actionIndex()
     {
         $data = Yii::$app->request->get();
