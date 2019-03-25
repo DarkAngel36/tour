@@ -1,3 +1,7 @@
+<?php
+$this->title = 'Личный кабинет';
+$this->params['breadcrumbs'][] = $this->title;
+?>
 <!-- - - - - - - - - - - - - - group_container - - - - - - - - - - - - - - - --->
 <div class="group_container p_t_zero indent_2">
     <div class="container">
