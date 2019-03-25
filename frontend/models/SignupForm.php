@@ -55,7 +55,7 @@ class SignupForm extends Model
         }
         
         $user = new User();
-        $user->username = $this->username;
+        $user->username = empty($this->username) ? uniqid() : $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->first_name = $this->first_name;
