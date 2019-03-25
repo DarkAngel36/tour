@@ -25,13 +25,13 @@
                                 <a class="menu_link" href="/hotels">Черное море</a>
                             </li>
                             <li class="menu_item">
-                                <a class="menu_link" href="/page/view?id=2">Агенствам</a>
+                                <a class="menu_link" href="/site/agents">Агенствам</a>
                             </li>
                             <li class="menu_item">
                                 <a class="menu_link" href="/page/view?id=3">Туристам</a>
                             </li>
                             <li class="menu_item">
-                                <a class="menu_link" href="/page/view?id=4">Контакты</a>
+                                <a class="menu_link" href="/site/contacts">Контакты</a>
                             </li>
                         </menu>
                     </nav>

@@ -224,4 +224,14 @@ class SiteController extends Controller
     {
         return $this->render('user-profile', ['model' => Yii::$app->user->identity]);
     }
+
+    public function actionAgents()
+    {
+        return $this->render('agents');
+    }
+
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
 }
