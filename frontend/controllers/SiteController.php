@@ -222,6 +222,6 @@ class SiteController extends Controller
 
     public function actionUserProfile()
     {
-        return $this->render('signup', ['model' => Yii::$app->user->identity]);
+        return $this->render('user-profile', ['model' => Yii::$app->user->identity]);
     }
 }
