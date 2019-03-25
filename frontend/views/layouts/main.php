@@ -90,7 +90,7 @@ use common\widgets\Alert;
                 <div class="row">
                     <div class="col-xs-12 al_right">
                         <div class="private_name">
-                            <span>Иванов Иван Иванович</span>
+                            <span><?= Yii::$app->user->identity->getFullName()?></span>
                             <ul class="private_dropdown">
                                 <li>
                                     <a href="/site/user-lk">Личный кабинет</a>
