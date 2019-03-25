@@ -15,36 +15,36 @@
 			magnificPopup = $(".magnific_popup");
 
 			if(magnificPopup.length){
-					include("plugins/magnific-popup/jquery.magnific-popup.min.js");
-					includeCss("plugins/magnific-popup/magnific-popup.css");
+					include("/plugins/magnific-popup/jquery.magnific-popup.min.js");
+					includeCss("/plugins/magnific-popup/magnific-popup.css");
 			}
 			if(slick.length){
-					include("plugins/slick/slick.js");
-					includeCss("plugins/slick/slick.css");
-					includeCss("plugins/slick/slick-theme.css");
+					include("/plugins/slick/slick.js");
+					includeCss("/plugins/slick/slick.css");
+					includeCss("/plugins/slick/slick-theme.css");
 			}
 			if(styler.length){
-					include("plugins/formstyler/formstyler.js");
-					includeCss("plugins/formstyler/formstyler.css");
+					include("/plugins/formstyler/formstyler.js");
+					includeCss("/plugins/formstyler/formstyler.css");
 			}
 			if(owl.length){
-			 		include('plugins/owl-carousel/owl.carousel.js');
-			 		includeCss("plugins/owl-carousel/owl.carousel.min.css");
+			 		include('/plugins/owl-carousel/owl.carousel.js');
+			 		includeCss("/plugins/owl-carousel/owl.carousel.min.css");
 			}
 			if(mask.length){
-					include("plugins/inputmask/inputmask.js");
-					include("plugins/inputmask/inputmask.phone.extensions.js");
-					include("plugins/inputmask/jquery.inputmask.js");
+					include("/plugins/inputmask/inputmask.js");
+					include("/plugins/inputmask/inputmask.phone.extensions.js");
+					include("/plugins/inputmask/jquery.inputmask.js");
 			}
 			if(mapYa.length){
 			 		include("https://api-maps.yandex.ru/2.1/?lang=ru_RU");
 			}
 			// if(popup.length){
-					include("plugins/arcticmodal/jquery.arcticmodal.js");
-					includeCss("plugins/arcticmodal/jquery.arcticmodal.css");
+					include("/plugins/arcticmodal/jquery.arcticmodal.js");
+					includeCss("/plugins/arcticmodal/jquery.arcticmodal.css");
 			// }
 
-					include("plugins/modernizr.js");
+					include("/plugins/modernizr.js");
 
 
 

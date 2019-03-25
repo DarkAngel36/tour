@@ -16,7 +16,7 @@
                         </div>
                         <menu class="menu" id="menu">
                             <li class="menu_item">
-                                <a class="menu_link" href="/tours">Подбор тура</a>
+                                <a class="menu_link" href="/tours/select">Подбор тура</a>
                             </li>
                             <li class="menu_item">
                                 <a class="menu_link" href="/tours">Экскурсионные туры</a>
