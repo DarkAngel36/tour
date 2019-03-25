@@ -93,13 +93,13 @@ use common\widgets\Alert;
                             <span>Иванов Иван Иванович</span>
                             <ul class="private_dropdown">
                                 <li>
-                                    <a href="javascript:;">Личный кабинет</a>
+                                    <a href="/site/user-lk">Личный кабинет</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">Редактировать</a>
+                                    <a href="/site/user-profile">Редактировать</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:;">Выйти</a>
+                                    <a href="/site/logout">Выйти</a>
                                 </li>
                             </ul>
                         </div>

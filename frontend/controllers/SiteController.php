@@ -214,4 +214,9 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionUserLk()
+    {
+        return $this->render('user-lk')
+    }
 }
