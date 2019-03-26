@@ -79,4 +79,21 @@ class ToursController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionGetAjaxFilter()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        switch(Yii::$app->request->get('type', 'city')) {
+            case 'city':
+                $data = [];
+                $cts = \common\models\Cities::getCitiesToDep();
+                foreach ($cts as $ct){
+                    $data[] = ['id' => $ct->id, 'name' => $ct->name];
+                }
+                $ret = ['output'=>$data, 'selected'=>''];
+                break;
+        }
+
+        return $ret;
+    }
 }

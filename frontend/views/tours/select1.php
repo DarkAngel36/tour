@@ -1,4 +1,7 @@
 <?php
+use kartik\depdrop\DepDrop;
+use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 $this->title = 'Подбор тура';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -17,7 +20,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-                <form class="railway_tour_form view2">
+<!--                <form class="railway_tour_form view2">-->
+                    <?php $form = ActiveForm::begin([
+                            'class' => 'railway_tour_form view2'
+                    ]); ?>
                     <div class="form_row_3_col mb25">
                         <div class="form_row">
                             <label class="form_label mb9 fz14">Откуда</label>
@@ -38,10 +44,29 @@ $this->params['breadcrumbs'][] = $this->title;
 <!--                                <option>Выберите город</option>-->
 <!--                                <option>Выберите город</option>-->
 <!--                            </select>-->
-                            <?= \yii\helpers\Html::activeDropDownList($searchModel,
-                                'cityTo',
-                                \common\models\Cities::getCitiesTo(),
-                                ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
+<!--                            --><?//= \yii\helpers\Html::activeDropDownList($searchModel,
+//                                'cityTo',
+//                                \common\models\Cities::getCitiesTo(),
+//                                ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
+
+                            <?= $form->field($searchModel, 'cityTo')->widget(DepDrop::classname(), [
+                                'options'=>[
+                                    'id'=>'subcat-id',
+//                                    'class' => 'styler form_select'
+                                ],
+                                'type' => DepDrop::TYPE_SELECT2,
+                                'select2Options' => [
+                                    'pluginOptions' => ['allowClear' => true],
+//                                    'class' => 'styler form_select'
+                                ],
+                                'pluginOptions'=>[
+                                    'depends'=>['tourssearch-cityfrom'],
+                                    'placeholder'=>'Выберите город...',
+                                    'url'=>Url::to(['/tours/get-ajax-filter/?type=city']),
+                                    'initialize' => true,
+                                    'loadingText' => 'Loading  ...',
+                                ]
+                            ]);?>
                         </div>
                         <div class="form_row">
                             <label class="form_label mb9 fz14">Период тура</label>
@@ -103,7 +128,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </div>
                     </div>
-                </form>
+                <?php ActiveForm::end(); ?>
+<!--                </form>-->
                 <div class="select_tour_box">
                     <div class="select_tour_item clearfix">
                         <div class="about_tour_img2">

@@ -131,6 +131,11 @@ class Cities extends BaseModel
         return ArrayHelper::map(self::find()->where('status = 1 AND direction = 2')->all(), 'id', 'name');
     }
 
+    public static function getCitiesToDep()
+    {
+        return self::find()->select('id, name')->where('status = 1 AND direction = 2')->all();
+    }
+
     public static function getTmpImgPath($add)
     {
         return \Yii::$app->basePath . '/../frontend/web/images/cities/' . (!empty($add) ? $add . '/' : '');
