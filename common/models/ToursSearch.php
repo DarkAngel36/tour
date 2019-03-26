@@ -24,6 +24,13 @@ class ToursSearch extends Tours
         ];
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'cityTo' => 'Куда'
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */

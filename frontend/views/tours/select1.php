@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
                         </div>
                         <div class="form_row">
-                            <label class="form_label mb9 fz14">Куда</label>
+<!--                            <label class="form_label mb9 fz14">Куда</label>-->
 <!--                            <select class="styler form_select">-->
 <!--                                <option>Выберите город</option>-->
 <!--                                <option>Выберите город</option>-->
@@ -49,18 +49,17 @@ $this->params['breadcrumbs'][] = $this->title;
 //                                \common\models\Cities::getCitiesTo(),
 //                                ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
 
-                            <?= $form->field($searchModel, 'cityTo')
-                                ->label('')
+                            <?= $form->field($searchModel, 'cityTo',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
                                 ->widget(DepDrop::classname(), [
-//                                    'labelOptions' => ['class' => 'form_label mb9 fz14'],
                                 'options'=>[
                                     'id'=>'subcat-id',
-//                                    'class' => 'styler form_select'
+                                    'class' => 'form_select'
                                 ],
                                 'type' => DepDrop::TYPE_SELECT2,
                                 'select2Options' => [
                                     'pluginOptions' => ['allowClear' => true],
-//                                    'class' => 'styler form_select'
+
+                                    'class' => ' form_select'
                                 ],
                                 'pluginOptions'=>[
                                     'depends'=>['tourssearch-cityfrom'],
