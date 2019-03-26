@@ -49,7 +49,10 @@ $this->params['breadcrumbs'][] = $this->title;
 //                                \common\models\Cities::getCitiesTo(),
 //                                ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
 
-                            <?= $form->field($searchModel, 'cityTo')->widget(DepDrop::classname(), [
+                            <?= $form->field($searchModel, 'cityTo')
+                                ->label('')
+                                ->widget(DepDrop::classname(), [
+//                                    'labelOptions' => ['class' => 'form_label mb9 fz14'],
                                 'options'=>[
                                     'id'=>'subcat-id',
 //                                    'class' => 'styler form_select'
