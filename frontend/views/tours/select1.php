@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-lg-10 col-lg-offset-1">
 <!--                <form class="railway_tour_form view2">-->
                     <?php $form = ActiveForm::begin([
-                            'class' => 'railway_tour_form view2'
+                            'options' => ['class' => 'railway_tour_form view2']
                     ]); ?>
                     <div class="form_row_3_col mb25">
                         <div class="form_row">
