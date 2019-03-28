@@ -49,9 +49,9 @@ use common\widgets\Alert;
     <link rel="stylesheet" media="screen" href="/css/reset.css" />
     <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
     <!-- Theme CSS     ============================================ -->
+    <?php $this->head() ?>
     <link rel="stylesheet" media="screen" href="/css/style.css" />
     <link rel="stylesheet" media="screen" href="/css/responsive.css" />
-    <?php $this->head() ?>
 <!-- Head End       ============================================ -->
 </head>
 <!-- Body Start     ============================================ -->
