@@ -46,12 +46,13 @@ use common\widgets\Alert;
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&amp;amp;subset=cyrillic" rel="stylesheet" />
     <link rel="stylesheet" media="screen" href="/css/font.css" />
     <!-- Include Libs CSS     ============================================ -->
-    <link rel="stylesheet" media="screen" href="/css/reset.css" />
-    <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
     <!-- Theme CSS     ============================================ -->
     <?php $this->head() ?>
     <link rel="stylesheet" media="screen" href="/css/style.css" />
     <link rel="stylesheet" media="screen" href="/css/responsive.css" />
+    <link rel="stylesheet" media="screen" href="/css/reset.css" />
+    <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
+
 <!-- Head End       ============================================ -->
 </head>
 <!-- Body Start     ============================================ -->
