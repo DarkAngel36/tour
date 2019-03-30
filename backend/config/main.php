@@ -51,8 +51,13 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'hotels-period/index/<hotel_id>' => 'hotels-period/index'
+                'hotels-period/index/<hotel_id>' => 'hotels-period/index',
+                'hotels-period/create/<hotel_id>' => 'hotels-period/create',
             ],
+        ],
+        'assetManager' => [
+	        'basePath' => '@webroot/assets',
+	        'baseUrl' => '@web/assets'
         ],
     ],
     'params' => $params,

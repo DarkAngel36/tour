@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Hotels Period', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Добавить период', \yii\helpers\Url::toRoute(['create', 'hotel_id' => $hotel_id]), ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([

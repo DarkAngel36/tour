@@ -5,8 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\HotelsPeriod */
 
-$this->title = 'Create Hotels Period';
-$this->params['breadcrumbs'][] = ['label' => 'Hotels Periods', 'url' => ['index']];
+$this->title = 'Добавить период';
+$this->params['breadcrumbs'][] = ['label' => 'Отели', 'url' => ['/hotels']];
+$this->params['breadcrumbs'][] = ['label' => 'Периоды', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Периоды', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hotels-period-create">

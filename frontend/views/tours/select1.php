@@ -20,35 +20,18 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
-<!--                <form class="railway_tour_form view2">-->
                     <?php $form = ActiveForm::begin([
                             'options' => ['class' => 'railway_tour_form view2']
                     ]); ?>
                     <div class="form_row_3_col mb25">
                         <div class="form_row">
                             <label class="form_label mb9 fz14">Откуда</label>
-<!--                            <select class="styler form_select">-->
-<!--                                <option>Выберите город</option>-->
-<!--                                <option>Выберите город</option>-->
-<!--                                <option>Выберите город</option>-->
-<!--                            </select>-->
                             <?= \yii\helpers\Html::activeDropDownList($searchModel,
                                 'cityFrom',
                                 \common\models\Cities::getCitiesFrom(),
                                 ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
                         </div>
                         <div class="form_row">
-<!--                            <label class="form_label mb9 fz14">Куда</label>-->
-<!--                            <select class="styler form_select">-->
-<!--                                <option>Выберите город</option>-->
-<!--                                <option>Выберите город</option>-->
-<!--                                <option>Выберите город</option>-->
-<!--                            </select>-->
-<!--                            --><?//= \yii\helpers\Html::activeDropDownList($searchModel,
-//                                'cityTo',
-//                                \common\models\Cities::getCitiesTo(),
-//                                ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
-
                             <?= $form->field($searchModel, 'cityTo',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
                                 ->widget(DepDrop::classname(), [
                                 'options'=>[
@@ -83,11 +66,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="form_row_3_col mb46">
                         <div class="form_row">
                             <label class="form_label mb9 fz14">Отель</label>
-<!--                            <select class="styler form_select">-->
-<!--                                <option>Выберите отель</option>-->
-<!--                                <option>Выберите отель</option>-->
-<!--                                <option>Выберите отель</option>-->
-<!--                            </select>-->
                             <?= \yii\helpers\Html::activeDropDownList($searchModel,
                                 'hotel_id',
                                 \common\models\Hotels::getList(),

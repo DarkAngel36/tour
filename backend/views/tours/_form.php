@@ -98,7 +98,7 @@ $initialPreviewArr = [
         ]
     ]);?>
     <?= $form->field($model, 'img_list')->widget(FileInput::classname(), [
-        'options' => ['accept' => 'image/*', 'multiple' => true,],
+//        'options' => ['accept' => 'image/*', 'multiple' => 1],
         'pluginEvents' => [
             "fileuploaded" => "function(event, data, previewId, index) { var name = data.response.fileName; $(\"input[name='Tours[img_list]'][type='hidden']\").val( $(\"input[name='Tours[img_list]'][type='hidden']\").val() + ',' + name ); return false; }",
         ],

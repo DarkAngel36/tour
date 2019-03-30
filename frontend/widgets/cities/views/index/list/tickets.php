@@ -12,7 +12,7 @@
         <div class="col-lg-10 col-lg-offset-1">
             <p>В продаже имеются железнодорожные билеты по направлениям:</p>
             <ul class="ticket_list">
-                <?foreach ($items as $item):?>
+                <?php foreach ($items as $item):?>
                 <li>
                     <span class="fz20 md"><?= $item->cityFrom->name?> - <?= $item->cityTo->name?></span>
 <!--                    <a class="link-md" href="javascript:;">Просмотреть даты</a>-->
