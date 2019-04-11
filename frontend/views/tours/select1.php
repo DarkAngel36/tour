@@ -32,44 +32,60 @@ $this->params['breadcrumbs'][] = $this->title;
                                 ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
                         </div>
                         <div class="form_row">
-                            <?= $form->field($searchModel, 'cityTo',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
-                                ->widget(DepDrop::classname(), [
-                                'options'=>[
-                                    'id'=>'subcat-id',
-                                    'class' => 'form_select'
-                                ],
-                                'type' => DepDrop::TYPE_SELECT2,
-                                'select2Options' => [
-                                    'pluginOptions' => ['allowClear' => true],
-
-                                    'class' => ' form_select'
-                                ],
-                                'pluginOptions'=>[
-                                    'depends'=>['tourssearch-cityfrom'],
-                                    'placeholder'=>'Выберите город...',
-                                    'url'=>Url::to(['/tours/get-ajax-filter/?type=city']),
-                                    'initialize' => true,
-                                    'loadingText' => 'Loading  ...',
-                                ]
-                            ]);?>
+	                        <label class="form_label mb9 fz14">Куда</label>
+	                        <?= \yii\helpers\Html::activeDropDownList($searchModel,
+		                        'cityTo',
+		                        \common\models\Cities::getCitiesTo(),
+		                        ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
+                            <!--
+	                        -->
                         </div>
                         <div class="form_row">
-                            <label class="form_label mb9 fz14">Период тура</label>
-                            <select class="styler form_select">
-                                <option>Дата отправления</option>
-                                <option>Дата отправления</option>
-                                <option>Дата отправления</option>
-                            </select>
+	                        <?= $form->field($searchModel, 'period',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
+		                        ->widget(DepDrop::classname(), [
+			                        'options'=>[
+				                        'id'=>'subcat-id',
+				                        'class' => 'form_select'
+			                        ],
+			                        'type' => DepDrop::TYPE_SELECT2,
+			                        'select2Options' => [
+				                        'pluginOptions' => ['allowClear' => true],
+				
+				                        'class' => ' form_select'
+			                        ],
+			                        'pluginOptions'=>[
+				                        'depends'=>['tourssearch-cityto', 'tourssearch-cityfrom', 'hotel-id'],
+				                        'placeholder'=>'Выберите период...',
+				                        'url'=>Url::to(['/tours/get-ajax-filter/?type=period']),
+				                        'initialize' => true,
+				                        'loadingText' => 'Loading  ...',
+			                        ]
+		                        ]);?>
                             <a class="link-xs link-bd mt8" href="#">Нужно больше дней?</a>
                         </div>
                     </div>
                     <div class="form_row_3_col mb46">
                         <div class="form_row">
-                            <label class="form_label mb9 fz14">Отель</label>
-                            <?= \yii\helpers\Html::activeDropDownList($searchModel,
-                                'hotel_id',
-                                \common\models\Hotels::getList(),
-                                ['class' => 'styler form_select', 'prompt' => 'Выберите отель'])?>
+	                        <?= $form->field($searchModel, 'hotel_id',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
+		                        ->widget(DepDrop::classname(), [
+			                        'options'=>[
+				                        'id'=>'hotel-id',
+				                        'class' => 'form_select'
+			                        ],
+			                        'type' => DepDrop::TYPE_SELECT2,
+			                        'select2Options' => [
+				                        'pluginOptions' => ['allowClear' => true],
+				
+				                        'class' => ' form_select'
+			                        ],
+			                        'pluginOptions'=>[
+				                        'depends'=>['tourssearch-cityto'],
+				                        'placeholder'=>'Выберите город...',
+				                        'url'=>Url::to(['/tours/get-ajax-filter/?type=hotel']),
+				                        'initialize' => true,
+				                        'loadingText' => 'Loading  ...',
+			                        ]
+		                        ]);?>
                         </div>
                         <div class="form_row">
                             <div class="form_row_col">

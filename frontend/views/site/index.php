@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use common\models\Cities;
+use yii\widgets\ActiveForm;
 $this->title = 'My Yii Application';
 $citiesFrom = Cities::getCitiesFrom();
 $citiesTo = Cities::getCitiesTo();
@@ -12,11 +13,19 @@ $citiesTo = Cities::getCitiesTo();
     <div class="container">
         <div class="first_box">
             <h4 class="fz26 white mb30 al_center">Подбор железнодорожного тура</h4>
-            <form class="railway_tour_form" action="<?= \yii\helpers\Url::toRoute('/tours')?>">
+            
+            <?php $form = ActiveForm::begin([
+	            'action' => \yii\helpers\Url::toRoute('/tours/select'),
+	            'options' => [
+                    'class' => 'railway_tour_form',
+                    
+                    'method' => 'post',
+	            ]
+            ]); ?>
                 <div class="form_row_col mb30">
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Откуда</label>
-                        <select class="styler form_select" name="cityFrom">
+                        <select class="styler form_select" name="ToursSearch[cityFrom]">
                             <option>Выберите город</option>
                             <?php foreach($citiesFrom as $id => $cityFrom):?>
                             <option value="<?= $id?>"><?= $cityFrom?></option>
@@ -25,7 +34,7 @@ $citiesTo = Cities::getCitiesTo();
                     </div>
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Куда</label>
-                        <select class="styler form_select" name="city_id">
+                        <select class="styler form_select" name="ToursSearch[cityTo]">
                             <option>Выберите город</option>
                             <?php foreach($citiesTo as $id => $cityFrom):?>
                                 <option value="<?= $id?>"><?= $cityFrom?></option>
@@ -36,7 +45,7 @@ $citiesTo = Cities::getCitiesTo();
                 <div class="form_row_col mb46">
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Период тура</label>
-                        <select class="styler form_select">
+                        <select class="styler form_select" name="ToursSearch[period]">
                             <option>Дата отправления</option>
                             <option>Дата отправления</option>
                             <option>Дата отправления</option>
@@ -47,10 +56,10 @@ $citiesTo = Cities::getCitiesTo();
                         <div class="form_row_col">
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Взрослых</label>
-                                <input class="styler form_input_number" type="number" min="0" value="1" name="parent" /> </div>
+                                <input class="styler form_input_number" type="number" min="0" value="1" name="ToursSearch[parentsCount]" /> </div>
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Детей</label>
-                                <input class="styler form_input_number" type="number" min="0" value="0" name="child" /> </div>
+                                <input class="styler form_input_number" type="number" min="0" value="0" name="ToursSearch[childCount]" /> </div>
                         </div>
                     </div>
                 </div>
@@ -64,7 +73,7 @@ $citiesTo = Cities::getCitiesTo();
                     </div>
                     <?php endif?>
                 </div>
-            </form>
+	        <?php ActiveForm::end(); ?>
         </div>
     </div>
 </div>

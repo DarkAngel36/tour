@@ -8,6 +8,7 @@
 
 namespace frontend\controllers;
 
+use common\models\HotelsPeriodSearch;
 use common\models\Tours;
 use common\models\ToursSearch;
 use Yii;
@@ -18,7 +19,12 @@ class ToursController extends Controller
     public function actionSelect()
     {
         $searchModel = new ToursSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if(Yii::$app->request->isPost) {
+	        $dataProvider = $searchModel->search(Yii::$app->request->post());
+        } else {
+	        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        }
+        
 
         return $this->render('select1', [
             'searchModel' => $searchModel,
@@ -92,6 +98,40 @@ class ToursController extends Controller
                 }
                 $ret = ['output'=>$data, 'selected'=>''];
                 break;
+	        case 'hotel':
+	        	$request = Yii::$app->request->post();
+	        	
+		        $data = [];
+		        if(empty($request['depdrop_all_params']['tourssearch-cityto']))
+			        $cts = \common\models\Hotels::find()->all();
+		        else
+		            $cts = \common\models\Hotels::find()->where(['city_id' => $request['depdrop_all_params']['tourssearch-cityto']])->all();
+		        foreach ($cts as $ct){
+			        $data[] = ['id' => $ct->id, 'name' => $ct->name];
+		        }
+		        $ret = ['output'=>$data, 'selected'=>''];
+	        	break;
+	        case 'period':
+		        $data = [];
+		        $cts = [];
+		        $searchPeriod = new HotelsPeriodSearch();
+		        $searchPeriod->to = Yii::$app->request->post('depdrop_all_params[tourssearch-cityto]', null);
+		        $searchPeriod->hotel_id = Yii::$app->request->post('depdrop_all_params[hotel_id]', null);
+		        
+//		        $cityTo = Yii::$app->request->post('depdrop_all_params[tourssearch-cityto]', null);
+//		        $cityFrom = Yii::$app->request->post('depdrop_all_params[tourssearch-cityfrom]', null);
+//		        $hotelId = Yii::$app->request->post('depdrop_all_params[hotel_id]', null);
+	        
+	            $searched = $searchPeriod->search([]);
+	            if($searched->getTotalCount() > 0) {
+		            $cts = $searched->getModels();
+	            }
+		        foreach ($cts as $ct){
+			        $data[] = ['id' => $ct->id, 'name' => $ct->from . ' - ' . $ct->to];
+		        }
+		        
+	        	$ret = ['output'=>$data, 'selected'=>''];
+	        	break;
         }
 
         return $ret;
