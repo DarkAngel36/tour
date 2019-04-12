@@ -10,7 +10,7 @@ use yii\widgets\Pjax;
 $hotel = \common\models\Hotels::findOne($hotel_id);
 
 $this->title = 'Отели: периоды';
-$this->params['breadcrumbs'][] = ['label' => $hotel->name, 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $hotel->name, 'url' => ['/hotels-period/index/' . $hotel_id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hotels-period-index">
