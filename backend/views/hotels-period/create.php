@@ -9,7 +9,7 @@ $hotel = \common\models\Hotels::findOne($model->hotel_id);
 
 $this->title = 'Добавить период';
 $this->params['breadcrumbs'][] = ['label' => 'Отели', 'url' => ['/hotels']];
-$this->params['breadcrumbs'][] = ['label' => $hotel->name, 'url' => ['/hotels-period/index/' . $model->hotel_id]];
+$this->params['breadcrumbs'][] = ['label' => $hotel->name, 'url' => ['/hotels/view/', 'id' => $model->hotel_id]];
 $this->params['breadcrumbs'][] = ['label' => 'Периоды', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
