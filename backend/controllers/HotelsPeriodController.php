@@ -69,7 +69,7 @@ class HotelsPeriodController extends Controller
         $model->hotel_id = $hotel_id;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index', 'id' => $model->hote_id]);
         }
 
         return $this->render('create', [
@@ -89,7 +89,7 @@ class HotelsPeriodController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index', 'id' => $model->hotel_id]);
         }
 
         return $this->render('update', [
