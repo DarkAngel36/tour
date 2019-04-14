@@ -64,7 +64,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				                        'class' => ' form_select'
 			                        ],
 			                        'pluginOptions'=>[
-				                        'depends'     => ['tourssearch-cityto', 'hotel-id'],
+				                        'depends'     => ['hotelssearch-city_id', 'hotel-id'],
 				                        'placeholder' =>'Выберите период...',
 				                        'url'         =>Url::to(['/tours/get-ajax-filter/?type=period']),
 				                        'initialize'  => true,
@@ -89,10 +89,10 @@ $this->params['breadcrumbs'][] = $this->title;
 				                        'class' => ' form_select'
 			                        ],
 			                        'pluginOptions'=>[
-				                        'depends'=>['tourssearch-cityto'],
-				                        'placeholder'=>'Выберите город...',
-				                        'url'=>Url::to(['/tours/get-ajax-filter/?type=hotel']),
-				                        'initialize' => true,
+				                        'depends'     => ['hotelssearch-city_id'],
+				                        'placeholder' =>'Выберите город...',
+				                        'url'         =>Url::to(['/tours/get-ajax-filter/?type=hotel']),
+				                        'initialize'  => true,
 				                        'loadingText' => 'Loading  ...',
 			                        ]
 		                        ]);?>
