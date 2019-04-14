@@ -119,7 +119,7 @@ class ToursController extends Controller
 			        'tourssearch-cityto' => null,
 			        'hotel_id'           => null,
 		        ]);
-		        $searchPeriod->to       = $searchData['tourssearch-cityto'];
+		        $searchPeriod->cityTo   = $searchData['tourssearch-cityto'];
 		        $searchPeriod->hotel_id = $searchData['hotel_id'];
 	        
 	            $searched = $searchPeriod->search([]);

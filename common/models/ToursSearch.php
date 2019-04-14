@@ -76,6 +76,11 @@ class ToursSearch extends Tours
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ]);
+	
+	    if (!empty($this->cityTo)) {
+		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->asArray('id');
+		    die(print_r($hotels));
+	    }
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'info', $this->info])
