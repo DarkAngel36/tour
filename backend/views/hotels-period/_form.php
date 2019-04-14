@@ -31,9 +31,9 @@ use kartik\select2\Select2;
 	]);?>
 	
 	<?= $form->field($model, 'category')->widget(Select2::classname(), [
-		'data' => ['эконом', 'стандарт', 'люкс'],
-		'language' => 'ru',
-		'options' => ['prompt' => 'категория номера'],
+		'data'          => ['эконом' => 'эконом', 'стандарт' => 'стандарт', 'люкс' => 'люкс'],
+		'language'      => 'ru',
+		'options'       => ['prompt' => 'категория номера'],
 		'pluginOptions' => [
 			'allowClear' => true,
 			'prompt' => 'категория номера'
