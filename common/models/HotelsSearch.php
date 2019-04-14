@@ -11,14 +11,16 @@ use common\models\Hotels;
  */
 class HotelsSearch extends Hotels
 {
-    /**
+	public $cityFrom, $hotel_id, $period;
+	
+	/**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'city_id', 'status'], 'integer'],
-            [['name', 'description', 'img', 'img_list'], 'safe'],
+	        [['id', 'city_id', 'status'], 'integer'],
+	        [['name', 'description', 'img', 'img_list', 'cityFrom', 'jotel_id', 'period'], 'safe'],
         ];
     }
 
@@ -62,6 +64,15 @@ class HotelsSearch extends Hotels
             'city_id' => $this->city_id,
             'status' => $this->status,
         ]);
+	
+	    if (!empty($this->cityTo)) {
+		    $ids    = [];
+		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->all();
+		    foreach ($hotels as $hotel) {
+			    $ids[] = $hotel->id;
+		    }
+		    $query->andWhere(['in', 'id', $ids]);
+	    }
 
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'description', $this->description])

@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use yii\data\ActiveDataProvider;
-use common\models\ToursSearch;
+use common\models\HotelsSearch;
 
 /**
  * @var $this         yii\web\View
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="form_row">
 	                        <label class="form_label mb9 fz14">Куда</label>
 	                        <?= \yii\helpers\Html::activeDropDownList($searchModel,
-		                        'cityTo',
+		                        'city_id',
 		                        \common\models\Cities::getCitiesTo(),
 		                        ['class' => 'styler form_select', 'prompt' => 'Выберите город'])?>
                             <!--
@@ -76,7 +76,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <div class="form_row_3_col mb46">
                         <div class="form_row">
-	                        <?= $form->field($searchModel, 'hotel_id',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
+	                        <?= $form->field($searchModel, 'id', ['labelOptions' => ['class' => 'form_label mb9 fz14'],])
 		                        ->widget(DepDrop::classname(), [
 			                        'options'=>[
 				                        'id'=>'hotel-id',

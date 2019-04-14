@@ -34,7 +34,7 @@ $citiesTo = Cities::getCitiesTo();
                     </div>
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Куда</label>
-                        <select class="styler form_select" name="ToursSearch[cityTo]">
+	                    <select class="styler form_select" name="HotelsSearch[city_id]">
                             <option>Выберите город</option>
                             <?php foreach($citiesTo as $id => $cityFrom):?>
                                 <option value="<?= $id?>"><?= $cityFrom?></option>
