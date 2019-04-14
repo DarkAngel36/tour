@@ -1,5 +1,5 @@
 <?php
-
+/* @var $searchModel \common\models\HotelsSearch */
 ?>
 
 <!--<div class="select_tour_item clearfix">-->
@@ -32,8 +32,10 @@
 								<a class="link-md md"
 								   href="<?= \yii\helpers\Url::to([
 									   'tours/select2',
-									   'hotel_id' => $model->id,
-									   'period_id' => $item->id,
+									   'hotel_id'     => $model->id,
+									   'period_id'    => $item->id,
+									   'parentsCount' => $searchModel->parentsCount,
+									   'childCount'   => $searchModel->childCount,
 								   ]) ?>">Выбрать</a>
 							</td>
 						</tr>

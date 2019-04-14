@@ -149,6 +149,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	            <div class="select_tour_box">
 	                <?= ListView::widget([
 		                'dataProvider' => $dataProvider,
+		                'viewParams'   => ['searchModel' => $searchModel],
 		                'itemView'     => '_hotel_periods',
 		                'itemOptions'  => [
 			                'class' => 'select_tour_item clearfix',
