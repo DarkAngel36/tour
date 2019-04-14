@@ -309,15 +309,16 @@ $this->params['breadcrumbs'][] = $this->title;
 $JS = <<<JS
 	$(document).ready(function(){
 		$(document).on('click', '#btnSelect', function (event) {
-		var options = {
-			type      : 'POST',
-			url       : $('#frmSelect1').attr('action'),
-			container : '#listItems', // id to update content
-			data      : $('#frmSelect1').serialize(),
-		};
+			event.preventDefault();
+			var options = {
+				type      : 'POST',
+				url       : $('#frmSelect1').attr('action'),
+				container : '#listItems', // id to update content
+				data      : $('#frmSelect1').serialize(),
+			};
 
-		$.pjax.reload(options);
-	});
+			$.pjax.reload(options);
+		});
 	})
 	
 JS;
