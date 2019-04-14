@@ -112,15 +112,15 @@ class ToursController extends Controller
 		        $ret = ['output'=>$data, 'selected'=>''];
 	        	break;
 	        case 'period':
-		        $data = [];
-		        $cts = [];
-		        $searchPeriod = new HotelsPeriodSearch();
-		        $searchPeriod->to = Yii::$app->request->post('depdrop_all_params[tourssearch-cityto]', null);
-		        $searchPeriod->hotel_id = Yii::$app->request->post('depdrop_all_params[hotel_id]', null);
-		        
-//		        $cityTo = Yii::$app->request->post('depdrop_all_params[tourssearch-cityto]', null);
-//		        $cityFrom = Yii::$app->request->post('depdrop_all_params[tourssearch-cityfrom]', null);
-//		        $hotelId = Yii::$app->request->post('depdrop_all_params[hotel_id]', null);
+		        $data                   = [];
+		        $cts                    = [];
+		        $searchPeriod           = new HotelsPeriodSearch();
+		        $searchData             = Yii::$app->request->post('depdrop_all_params', [
+			        'tourssearch-cityto' => null,
+			        'hotel_id'           => null,
+		        ]);
+		        $searchPeriod->to       = $searchData['tourssearch-cityto'];
+		        $searchPeriod->hotel_id = $searchData['hotel_id'];
 	        
 	            $searched = $searchPeriod->search([]);
 	            if($searched->getTotalCount() > 0) {

@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	                        <?= $form->field($searchModel, 'period',['labelOptions' => ['class' => 'form_label mb9 fz14'],])
 		                        ->widget(DepDrop::classname(), [
 			                        'options'=>[
-				                        'id'=>'subcat-id',
+				                        'id'    => 'period-id',
 				                        'class' => 'form_select'
 			                        ],
 			                        'type' => DepDrop::TYPE_SELECT2,
@@ -54,10 +54,10 @@ $this->params['breadcrumbs'][] = $this->title;
 				                        'class' => ' form_select'
 			                        ],
 			                        'pluginOptions'=>[
-				                        'depends'=>['tourssearch-cityto', 'tourssearch-cityfrom', 'hotel-id'],
-				                        'placeholder'=>'Выберите период...',
-				                        'url'=>Url::to(['/tours/get-ajax-filter/?type=period']),
-				                        'initialize' => true,
+				                        'depends'     => ['tourssearch-cityto', 'hotel-id'],
+				                        'placeholder' =>'Выберите период...',
+				                        'url'         =>Url::to(['/tours/get-ajax-filter/?type=period']),
+				                        'initialize'  => true,
 				                        'loadingText' => 'Loading  ...',
 			                        ]
 		                        ]);?>
