@@ -5,6 +5,10 @@
  * Date: 20.03.2019
  * Time: 4:25
  */
+
+use common\models\Hotels;
+
+/* @var $model Hotels */
 $imgG = $model->getImagesPreview('gallery','168x144');
 $img = $model->getImagesPreview('main','368x276');
 $this->title = $model->name;
@@ -32,7 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                     </div>
                     <div class="about_tour_bottom">
-                        <table class="about_tour_table">
+	                    <?php if (count($model->hotelsPeriods) > 0): ?>
+		                    <table class="about_tour_table">
                             <thead>
                             <tr>
                                 <th>Период тура</th>
@@ -41,23 +46,18 @@ $this->params['breadcrumbs'][] = $this->title;
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td data-title="Наимен-ие">15.06.2018 — 23.06.2018</td>
-                                <td data-title="Артикул">Эконом</td>
-                                <td data-title="Наличие">от 20 000 руб.</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Наимен-ие">15.06.2018 — 23.06.2018</td>
-                                <td data-title="Артикул">Стандарт</td>
-                                <td data-title="Наличие">от 30 000 руб.</td>
-                            </tr>
-                            <tr>
-                                <td data-title="Наимен-ие">23.06.2018 — 01.07.2018</td>
-                                <td data-title="Артикул">Стандарт</td>
-                                <td data-title="Наличие">от 30 000 руб.</td>
-                            </tr>
+                            <?php foreach ($model->hotelsPeriods as $item): ?>
+	                            <tr>
+		                            <td data-title="Наимен-ие"><?= $item->from ?> — <?= $item->to ?></td>
+		                            <td data-title="Артикул"><?= $item->category ?></td>
+		                            <td data-title="Наличие">от <?= $item->cost ?> руб.</td>
+	                            </tr>
+                            <?php endforeach ?>
                             </tbody>
                         </table>
+	                    <?php else: ?>
+		                    <strong>Ничего не найдено</strong>
+	                    <?php endif; ?>
                     </div>
                 </div>
             </div>
