@@ -72,8 +72,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-	    die(print_r(Yii::$app->basePath));
-	
+//	    die(print_r(Yii::$app->basePath));
+// /home/shamriko/dvine.com.ua/empiretour/frontend
 	    return $this->render('index');
     }
 
