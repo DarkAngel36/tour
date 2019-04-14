@@ -9,6 +9,7 @@
 namespace frontend\controllers;
 
 use common\models\HotelsPeriodSearch;
+use common\models\HotelsSearch;
 use common\models\Tours;
 use common\models\ToursSearch;
 use Yii;
@@ -18,7 +19,7 @@ class ToursController extends Controller
 {
     public function actionSelect()
     {
-        $searchModel = new ToursSearch();
+	    $searchModel = new HotelsSearch();
         if(Yii::$app->request->isPost) {
 	        $dataProvider = $searchModel->search(Yii::$app->request->post());
         } else {
