@@ -120,14 +120,14 @@ class ToursController extends Controller
 			        'tourssearch-cityto' => null,
 			        'hotel_id'           => null,
 		        ]);
-		        die(print_r($searchData));
+//		        die(print_r($searchData));
 		        $searchPeriod->cityTo   = $searchData['hotelssearch-city_id'];
-		        $searchPeriod->hotel_id = $searchData['hotel_id'];
+		        $searchPeriod->hotel_id = $searchData['hotel-id'];
 		
 		        $searched = $searchPeriod->search([
 			        'HotelsPeriodSearch' => [
 				        'cityTo'   => $searchData['hotelssearch-city_id'],
-				        'hotel_id' => $searchData['hotel_id'],
+				        'hotel_id' => $searchData['hotel-id'],
 			        ],
 		        ]);
 	            if($searched->getTotalCount() > 0) {
