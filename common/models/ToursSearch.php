@@ -78,7 +78,7 @@ class ToursSearch extends Tours
         ]);
 	
 	    if (!empty($this->cityTo)) {
-		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->asArray('id');
+		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->asArray('id')->all();
 		    die(print_r($hotels));
 	    }
 
