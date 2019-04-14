@@ -304,20 +304,26 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 </div>
 
-<script>
-	$(document).ready();
-	{
-		$(document).on('click', '#btnSelect', function (event) {
-			var options = {
-				type      : 'POST',
-				url       : $('#frmSelect1').attr('action'),
-				container : '#listItems', // id to update content
-				data      : $('#frmSelect1').serialize(),
-			};
 
-			$.pjax.reload(options);
-		});
-	}
-</script>
+<?php
+$JS = <<<JS
+	$(document).ready(function(){
+		$(document).on('click', '#btnSelect', function (event) {
+		var options = {
+			type      : 'POST',
+			url       : $('#frmSelect1').attr('action'),
+			container : '#listItems', // id to update content
+			data      : $('#frmSelect1').serialize(),
+		};
+
+		$.pjax.reload(options);
+	});
+	})
+	
+JS;
+
+$this->registerJs($JS);
+
+?>
 
 <!-- - - - - - - - - - - - - - End of select_tour_container - - - - - - - - - - - - - - - --->
