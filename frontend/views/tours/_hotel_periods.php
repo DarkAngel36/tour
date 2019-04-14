@@ -2,7 +2,7 @@
 
 ?>
 
-<div class="select_tour_item clearfix">
+<!--<div class="select_tour_item clearfix">-->
 	<div class="about_tour_img2">
 		<img src="/images/park_sm1.png" alt=""/>
 	</div>
@@ -34,4 +34,4 @@
 			</table>
 		</div>
 	</div>
-</div>
+<!--</div>-->

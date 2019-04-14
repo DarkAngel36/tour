@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				                        'initialize'  => true,
 				                        'loadingText' => 'Loading  ...',
 			                        ]
-		                        ]);?>
+		                        ])->label('Отель'); ?>
                         </div>
                         <div class="form_row">
                             <div class="form_row_col">
@@ -140,6 +140,9 @@ $this->params['breadcrumbs'][] = $this->title;
 	                <?= ListView::widget([
 		                'dataProvider' => $dataProvider,
 		                'itemView'     => '_hotel_periods',
+		                'itemOptions'  => [
+			                'class' => 'select_tour_item clearfix',
+		                ],
 	                ]) ?>
 	                <!--
 										<div class="select_tour_item clearfix">
