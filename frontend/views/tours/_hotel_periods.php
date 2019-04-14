@@ -8,8 +8,8 @@
 	</div>
 	<div class="about_tour_text2">
 		<div class="mb13">
-			<h6 class="mb5">Анапа</h6>
-			<h6 class="md">База отдыха «Чайка»</h6>
+			<h6 class="mb5"><?= $model->city->name ?></h6>
+			<h6 class="md"><?= $model->name ?></h6>
 		</div>
 		<div class="about_tour_bottom">
 			<table class="about_tour_table version2">
