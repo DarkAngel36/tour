@@ -68,7 +68,7 @@ class HotelsPeriodSearch extends HotelsPeriod
             'cost' => $this->cost,
             'status' => $this->status,
         ]);
-	    die(print_r($this->attributes));
+//	    die(print_r($this->attributes));
 	    if (!empty($this->cityTo)) {
 		    $ids    = [];
 		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->all();
