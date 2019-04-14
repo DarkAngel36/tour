@@ -60,9 +60,9 @@ class BaseModel extends \yii\db\ActiveRecord
         if (is_dir($path)) {
             $images = FileHelper::findFiles($path, ['recursive' => false]);
             foreach ($images as $ind => $image) {
-                $img = str_replace(FileHelper::normalizePath(\Yii::$app->basePath . '/../frontend/web'),
+	            $img                 = str_replace(FileHelper::normalizePath(\Yii::$app->basePath . '/'/*. '/../frontend/web'*/),
                     \Yii::$app->params['front'], $image);
-                $initialPreview[] = $img;
+                $initialPreview[]    = $img;
                 $initialPreviewCfg[] = [
                     'caption' => "img_$ind",
                     'key' => str_replace($path . DIRECTORY_SEPARATOR, '', $image)
