@@ -106,7 +106,7 @@ class ToursController extends Controller
 		        if (empty($request['depdrop_all_params']['hotelssearch-city_id']))
 			        $cts = \common\models\Hotels::find()->all();
 		        else
-		            $cts = \common\models\Hotels::find()->where(['city_id' => $request['depdrop_all_params']['tourssearch-cityto']])->all();
+			        $cts = \common\models\Hotels::find()->where(['city_id' => $request['depdrop_all_params']['hotelssearch-city_id']])->all();
 		        foreach ($cts as $ct){
 			        $data[] = ['id' => $ct->id, 'name' => $ct->name];
 		        }
