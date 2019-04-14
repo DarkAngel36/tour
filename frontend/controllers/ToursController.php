@@ -103,7 +103,7 @@ class ToursController extends Controller
 	        	$request = Yii::$app->request->post();
 	        	
 		        $data = [];
-		        if(empty($request['depdrop_all_params']['tourssearch-cityto']))
+		        if (empty($request['depdrop_all_params']['hotelssearch-city_id']))
 			        $cts = \common\models\Hotels::find()->all();
 		        else
 		            $cts = \common\models\Hotels::find()->where(['city_id' => $request['depdrop_all_params']['tourssearch-cityto']])->all();
@@ -120,7 +120,7 @@ class ToursController extends Controller
 			        'tourssearch-cityto' => null,
 			        'hotel_id'           => null,
 		        ]);
-		        $searchPeriod->cityTo   = $searchData['tourssearch-cityto'];
+		        $searchPeriod->cityTo   = $searchData['hotelssearch-city_id'];
 		        $searchPeriod->hotel_id = $searchData['hotel_id'];
 	        
 	            $searched = $searchPeriod->search([]);
