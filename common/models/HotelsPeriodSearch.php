@@ -75,7 +75,7 @@ class HotelsPeriodSearch extends HotelsPeriod
 		    foreach ($hotels as $hotel) {
 			    $ids[] = $hotel->id;
 		    }
-		    $query->andWhere(['in', 'id', $ids]);
+		    $query->andWhere(['in', 'hotel_id', $ids]);
 	    }
 
         $query->andFilterWhere(['like', 'category', $this->category]);
