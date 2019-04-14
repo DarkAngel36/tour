@@ -11,7 +11,7 @@ use common\models\Hotels;
  */
 class HotelsSearch extends Hotels
 {
-	public $cityFrom, $hotel_id, $period;
+	public $cityFrom, $hotel_id, $period, $cityTo, $parentsCount, $childCount;
 	
 	/**
      * {@inheritdoc}
@@ -20,7 +20,21 @@ class HotelsSearch extends Hotels
     {
         return [
 	        [['id', 'city_id', 'status'], 'integer'],
-	        [['name', 'description', 'img', 'img_list', 'cityFrom', 'jotel_id', 'period'], 'safe'],
+	        [
+		        [
+			        'name',
+			        'description',
+			        'img',
+			        'img_list',
+			        'cityFrom',
+			        'jotel_id',
+			        'period',
+			        'cityTo',
+			        'parentsCount',
+			        'childCount',
+		        ],
+		        'safe',
+	        ],
         ];
     }
 

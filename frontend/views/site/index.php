@@ -25,7 +25,7 @@ $citiesTo = Cities::getCitiesTo();
                 <div class="form_row_col mb30">
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Откуда</label>
-                        <select class="styler form_select" name="ToursSearch[cityFrom]">
+	                    <select class="styler form_select" name="HotelsSearch[cityFrom]">
                             <option>Выберите город</option>
                             <?php foreach($citiesFrom as $id => $cityFrom):?>
                             <option value="<?= $id?>"><?= $cityFrom?></option>
@@ -45,7 +45,7 @@ $citiesTo = Cities::getCitiesTo();
                 <div class="form_row_col mb46">
                     <div class="form_row">
                         <label class="form_label mb9 fz14">Период тура</label>
-                        <select class="styler form_select" name="ToursSearch[period]">
+	                    <select class="styler form_select" name="HotelsSearch[period]">
                             <option>Дата отправления</option>
                             <option>Дата отправления</option>
                             <option>Дата отправления</option>
@@ -56,10 +56,18 @@ $citiesTo = Cities::getCitiesTo();
                         <div class="form_row_col">
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Взрослых</label>
-                                <input class="styler form_input_number" type="number" min="0" value="1" name="ToursSearch[parentsCount]" /> </div>
+	                            <input class="styler form_input_number"
+	                                   type="number"
+	                                   min="0"
+	                                   value="1"
+	                                   name="HotelsSearch[parentsCount]"/></div>
                             <div class="form_row">
                                 <label class="form_label mb9 fz14">Детей</label>
-                                <input class="styler form_input_number" type="number" min="0" value="0" name="ToursSearch[childCount]" /> </div>
+	                            <input class="styler form_input_number"
+	                                   type="number"
+	                                   min="0"
+	                                   value="0"
+	                                   name="HotelsSearch[childCount]"/></div>
                         </div>
                     </div>
                 </div>

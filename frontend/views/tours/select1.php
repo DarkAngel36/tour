@@ -9,7 +9,7 @@ use common\models\HotelsSearch;
 /**
  * @var $this         yii\web\View
  * @var $dataProvider ActiveDataProvider
- * @var searchModel ToursSearch
+ * @var searchModel HotelsSearch
  */
 
 $this->title = 'Подбор тура';
@@ -103,7 +103,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="form_row">
                                     <label class="form_label mb9 fz14">Взрослых</label>
                                     <div class="p_rel d_ib">
-                                        <input class="styler form_input_number js-input-number" type="number" min="0" />
+	                                    <input class="styler form_input_number js-input-number"
+	                                           type="number"
+	                                           min="0"
+	                                           value="<?= $searchModel->parentsCount ?>"/>
                                         <div class="js-dropdown-input dropdown-input">
                                             <div class="dropdown-input-item">
                                                 <div class="dropdown-input-title">Возраст детей</div>
@@ -115,7 +118,10 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="form_row">
                                     <label class="form_label mb9 fz14">Детей</label>
                                     <div class="p_rel d_ib">
-                                        <input class="styler form_input_number js-input-number" type="number" min="0" />
+	                                    <input class="styler form_input_number js-input-number"
+	                                           type="number"
+	                                           min="0"
+	                                           value="<?= $searchModel->childCount ?>"/>
                                         <div class="js-dropdown-input dropdown-input">
                                             <div class="dropdown-input-item">
                                                 <div class="dropdown-input-title">Возраст детей</div>
