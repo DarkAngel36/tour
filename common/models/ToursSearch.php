@@ -79,7 +79,7 @@ class ToursSearch extends Tours
 	
 	    if (!empty($this->cityTo)) {
 		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->asArray('id')->all();
-		    die(print_r($hotels));
+		    die(print_r(array_values($hotels)));
 	    }
 
         $query->andFilterWhere(['like', 'name', $this->name])
