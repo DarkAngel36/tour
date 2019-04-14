@@ -31,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-10 col-lg-offset-1">
                     <?php $form = ActiveForm::begin([
-                            'options' => ['class' => 'railway_tour_form view2']
+	                    'id'      => 'frmSelect1',
+	                    'options' => ['class' => 'railway_tour_form view2']
                     ]); ?>
                     <div class="form_row_3_col mb25">
                         <div class="form_row">
@@ -126,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </div>
                         <div class="form_button">
-                            <button class="btn_orange btn_w2 btn_size3 btn_uppercase">Подобрать</button>
+	                        <button class="btn_orange btn_w2 btn_size3 btn_uppercase" id="btnSelect">Подобрать</button>
                             <div class="al_center">
                                 <a class="link-sm" href="javascript:;" data-popup="#enter_popup">Вход для агентов /
                                     <span class="blue-lite">Регистрация</span>
@@ -136,7 +137,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 <?php ActiveForm::end(); ?>
 <!--                </form>-->
-                <div class="select_tour_box">
+	            <? \yii\widgets\Pjax::begin([
+		            'id' => 'listItems',
+	            ]) ?>
+	            <div class="select_tour_box">
 	                <?= ListView::widget([
 		                'dataProvider' => $dataProvider,
 		                'itemView'     => '_hotel_periods',
@@ -294,8 +298,26 @@ $this->params['breadcrumbs'][] = $this->title;
 										</div>
 					-->
                 </div>
+	            <? \yii\widgets\Pjax::end() ?>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+	$(document).ready();
+	{
+		$(document).on('click', '#btnSelect', function (event) {
+			var options = {
+				type      : 'POST',
+				url       : $('#frmSelect1').attr('action'),
+				container : '#listItems', // id to update content
+				data      : $('#frmSelect1').serialize(),
+			};
+
+			$.pjax.reload(options);
+		});
+	}
+</script>
+
 <!-- - - - - - - - - - - - - - End of select_tour_container - - - - - - - - - - - - - - - --->
