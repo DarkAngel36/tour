@@ -55,7 +55,7 @@ class BaseModel extends \yii\db\ActiveRecord
         $class = self::className();
 
         $path = FileHelper::normalizePath($class::getTmpImgPath("{$this->id}//{$add}"));
-
+	    die(print_r(\Yii::$app->basePath));
         FileHelper::createDirectory($path);
         if (is_dir($path)) {
             $images = FileHelper::findFiles($path, ['recursive' => false]);
