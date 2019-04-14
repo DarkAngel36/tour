@@ -5,6 +5,7 @@ namespace common\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\Tours;
+use yii\helpers\ArrayHelper;
 
 /**
  * ToursSearch represents the model behind the search form of `common\models\Tours`.
@@ -78,8 +79,12 @@ class ToursSearch extends Tours
         ]);
 	
 	    if (!empty($this->cityTo)) {
+		    $ids    = [];
 		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->all();
-		    die(print_r(array_values($hotels)));
+		    foreach ($hotels as $hotel) {
+			    $ids[] = $hotel->id;
+		    }
+		    die(print_r(array_values($ids)));
 	    }
 
         $query->andFilterWhere(['like', 'name', $this->name])
