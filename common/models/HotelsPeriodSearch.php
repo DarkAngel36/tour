@@ -11,15 +11,17 @@ use common\models\HotelsPeriod;
  */
 class HotelsPeriodSearch extends HotelsPeriod
 {
-    /**
+	public $cityTo;
+	
+	/**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['id', 'hotel_id', 'from', 'to', 'status'], 'integer'],
-            [['category'], 'safe'],
-            [['cost'], 'number'],
+	        [['id', 'hotel_id', 'from', 'to', 'status'], 'integer'],
+	        [['category', 'cityTo'], 'safe'],
+	        [['cost'], 'number'],
         ];
     }
 
@@ -66,6 +68,15 @@ class HotelsPeriodSearch extends HotelsPeriod
             'cost' => $this->cost,
             'status' => $this->status,
         ]);
+	
+	    if (!empty($this->cityTo)) {
+		    $ids    = [];
+		    $hotels = Hotels::find()->where(['city_id' => $this->cityTo])->select('id')->all();
+		    foreach ($hotels as $hotel) {
+			    $ids[] = $hotel->id;
+		    }
+		    $query->andWhere(['in', 'id', $ids]);
+	    }
 
         $query->andFilterWhere(['like', 'category', $this->category]);
 
