@@ -125,7 +125,7 @@ class ToursController extends Controller
 		        $searchPeriod->hotel_id = $searchData['hotel_id'];
 		
 		        $searched = $searchPeriod->search([
-			        'HotelsSearch' => [
+			        'HotelsPeriodSearch' => [
 				        'cityTo'   => $searchData['hotelssearch-city_id'],
 				        'hotel_id' => $searchData['hotel_id'],
 			        ],
