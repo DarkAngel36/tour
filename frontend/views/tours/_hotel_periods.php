@@ -29,7 +29,12 @@
 							<td data-title="Категория номера"><?= $item->category ?></td>
 							<td data-title="Стоимость">от <?= $item->cost ?> руб.</td>
 							<td data-title="&nbsp;">
-								<a class="link-md md" href="javascript:;">Выбрать</a>
+								<a class="link-md md"
+								   href="<?= \yii\helpers\Url::to([
+									   'tours/select2',
+									   'hotel_id' => $model->id,
+									   'period_id' => $item->id,
+								   ]) ?>">Выбрать</a>
 							</td>
 						</tr>
 					<?php endforeach ?>
