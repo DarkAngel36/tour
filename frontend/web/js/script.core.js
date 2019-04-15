@@ -111,14 +111,14 @@
 
 			validateData : function () {
 				if (places != countPlaces) {
-					return false;
+					return true;
 				}
 				$('div.xs input[type="text"]').each(function () {
 					if ($(this).val() == '') {
-						return false;
+						return true;
 					}
 				});
-				return true;
+				return false;
 			},
 
 			clickPlace: function(){
@@ -129,6 +129,7 @@
 					event.preventDefault();
 
 					var $this = $(this);
+					var index;
 
 					$('#btnSelect2').prop('disabled', self.validateData());
 
@@ -141,9 +142,11 @@
 
 						if($(this).hasClass('last_place') && $(this).siblings('.first_place').hasClass('current')){
 							$(this).addClass('current').parent().removeClass('not_selected');
+							placesArr.push($(this).attr('data-num') + 1);
 						}
 						else if( $(this).hasClass('first_place') && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).addClass('current').parent().addClass('not_selected');
+							placesArr.push($(this).attr('data-num') + 1);
 						}
 
 					}
@@ -151,9 +154,17 @@
 
 						if($(this).hasClass('last_place')  && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).removeClass('current').parent().addClass('not_selected');
+							index = placesArr.indexOf($(this).attr('data-num') + 1);
+							if (index !== -1) {
+								placesArr.splice(index, 1);
+							}
 						}
 						else if($(this).hasClass('first_place') && !$(this).siblings('.last_place').hasClass('current')){
-							$(this).removeClass('current').parent().removeClass('not_selected');;
+							$(this).removeClass('current').parent().removeClass('not_selected');
+							index = placesArr.indexOf($(this).attr('data-num') + 1);
+							if (index !== -1) {
+								placesArr.splice(index, 1);
+							}
 						}
 
 					}
