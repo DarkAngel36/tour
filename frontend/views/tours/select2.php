@@ -5,7 +5,7 @@
 ?>
 <script>
 	places = <?= $parentsCount + $childCount?>
-</script?
+</script>
 <!-- - - - - - - - - - - - - - select_tour_container - - - - - - - - - - - - - - - --->
 <div class="select_tour_container indent_2">
 	<div class="container">
