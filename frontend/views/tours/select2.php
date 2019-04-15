@@ -5,6 +5,7 @@
 $JS = <<<JS
 var places      = 0;
 var countPlaces = 0;
+var validSelect2 = false;
 JS;
 $this->registerJs($JS, \yii\web\View::POS_HEAD);
 
@@ -364,7 +365,11 @@ $this->registerJs($JS, \yii\web\View::POS_HEAD);
 			</div>
 		</div>
 		<div class="al_center">
-			<a class="btn_orange btn_w2 btn_size3 btn_uppercase md" href="javascript:;">Перейти к бронированию</a>
+			<button id="btnSelect2"
+			        class="btn_orange btn_w2 btn_size3 btn_uppercase md"
+			        href="javascript:;"
+			        disabled>Перейти к бронированию
+			</button>
 		</div>
 	</div>
 </div>

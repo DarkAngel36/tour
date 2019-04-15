@@ -109,6 +109,18 @@
 
 			},
 
+			validateData : function () {
+				if (places != countPlaces) {
+					return false;
+				}
+				$('div.xs input[type="text"]').each(function () {
+					if ($(this).val() == '') {
+						return false;
+					}
+				});
+				return true;
+			},
+
 			clickPlace: function(){
 
 				var self = this;
@@ -117,6 +129,8 @@
 					event.preventDefault();
 
 					var $this = $(this);
+
+					$('#btnSelect2').prop('disabled', self.validateData());
 
 					if(!$(this).hasClass('current')){
 
