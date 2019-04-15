@@ -168,177 +168,36 @@
 				<div class="railway_container">
 					<div class="railway_box_wrap" data-toggle-check="off">
 						<div class="railway_box">
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
+							<?php for ($i = 1; $i <= 9; $i++): ?>
+								<div class="railway_box_item">
+									<div class="railway_box_top mb40">
+										<!-- first_place/last_place меняется на reserved--!>
+										<div>
+											<div data-num="<?= $i ?>"
+											     class="railway_section_place first_place mb20">в
+											</div>
+											<div data-num="<?= $i + 1 ?>"
+											     class="railway_section_place last_place">н
+											</div>
+										</div>
+										<div>
+											<img src="/images/icons/black_cloud.svg" alt="" />
+										</div>
+										<div>
+											<div data-num="<?= $i + 2 ?>"
+											     class="railway_section_place first_place mb20">в
+											</div>
+											<div data-num="<?= $i + 3 ?>"
+											     class="railway_section_place last_place">н
+											</div>
+										</div>
 									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place reserved">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
+									<div class="railway_box_bottom">
+										<div data-num="<?= $i + 4 ?>" class="railway_section_place reserved">н</div>
+										<div data-num="<?= $i + 5 ?>" class="railway_section_place first_place">в</div>
 									</div>
 								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
-							<div class="railway_box_item">
-								<div class="railway_box_top mb40">
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-									<div>
-										<img src="/images/icons/black_cloud.svg" alt="" />
-									</div>
-									<div>
-										<div class="railway_section_place first_place mb20">в</div>
-										<div class="railway_section_place last_place">н</div>
-									</div>
-								</div>
-								<div class="railway_box_bottom">
-									<div class="railway_section_place last_place">н</div>
-									<div class="railway_section_place first_place">в</div>
-								</div>
-							</div>
+							<?php endfor; ?>
 						</div>
 					</div>
 					<div class="railway_box_wrap" data-toggle-check="on">
