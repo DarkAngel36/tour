@@ -2,6 +2,12 @@
 /* @var $hotelModel \common\models\Hotels */
 /* @var $periodModel \common\models\HotelsPeriod */
 
+$JS = <<<JS
+var places      = 0;
+var countPlaces = 0;
+JS;
+$this->registerJs($JS, \yii\web\View::POS_HEAD);
+
 ?>
 <script>
 	places = <?= $parentsCount + $childCount?>

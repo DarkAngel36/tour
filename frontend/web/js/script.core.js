@@ -2,9 +2,6 @@
 
 	"use strict";
 
-	var places      = 0;
-	var countPlaces = 0;
-
 	var Core = {
 
 		DOMReady: function(){
