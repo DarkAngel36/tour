@@ -42,6 +42,7 @@
 							<div>Количество человек</div>
 							<div><?= $parentsCount + $childCount ?></div>
 						</li>
+						<!--
 						<li>
 							<div>Тип размещения</div>
 							<div class="group_list_item">
@@ -51,10 +52,11 @@
 								<a class="link-bd reg" href="javascript:;">+ Добавить номер</a>
 							</div>
 						</li>
+						-->
 					</ul>
 					<div class="group_price m_b_zero">
 						<span>Сумма к оплате</span>
-						<span>84 000 рублей</span>
+						<span><?= $periodModel->cost * ($parentsCount + $childCount) ?> рублей</span>
 					</div>
 				</div>
 			</div>
