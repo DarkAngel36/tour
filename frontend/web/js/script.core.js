@@ -142,11 +142,11 @@
 
 						if($(this).hasClass('last_place') && $(this).siblings('.first_place').hasClass('current')){
 							$(this).addClass('current').parent().removeClass('not_selected');
-							placesArr.push($(this).attr('data-num') + 1);
+							placesArr.push($(this).attr('data-num') * 1 + 1);
 						}
 						else if( $(this).hasClass('first_place') && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).addClass('current').parent().addClass('not_selected');
-							placesArr.push($(this).attr('data-num') + 1);
+							placesArr.push($(this).attr('data-num') * 1 + 1);
 						}
 
 					}
@@ -154,14 +154,14 @@
 
 						if($(this).hasClass('last_place')  && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).removeClass('current').parent().addClass('not_selected');
-							index = placesArr.indexOf($(this).attr('data-num') + 1);
+							index = placesArr.indexOf($(this).attr('data-num') * 1 + 1);
 							if (index !== -1) {
 								placesArr.splice(index, 1);
 							}
 						}
 						else if($(this).hasClass('first_place') && !$(this).siblings('.last_place').hasClass('current')){
 							$(this).removeClass('current').parent().removeClass('not_selected');
-							index = placesArr.indexOf($(this).attr('data-num') + 1);
+							index = placesArr.indexOf($(this).attr('data-num') * 1 + 1);
 							if (index !== -1) {
 								placesArr.splice(index, 1);
 							}
