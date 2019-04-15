@@ -116,11 +116,6 @@
 				$('.railway_section_place:not(.reserved)').on('click',  function(event) {
 					event.preventDefault();
 
-					if (places <= countPlaces) {
-						alert('Вы уже выбрали достаточно мест');
-						return false;
-					}
-
 					var $this = $(this);
 
 					if(!$(this).hasClass('current')){
@@ -134,6 +129,11 @@
 
 					}
 					else{
+
+						if (places <= countPlaces) {
+							alert('Вы уже выбрали достаточно мест');
+							return false;
+						}
 
 						if($(this).hasClass('last_place')  && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).removeClass('current').parent().addClass('not_selected');
