@@ -84,84 +84,47 @@
 					</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td data-table-title="№ п/п:">1</td>
-						<td data-table-title="Пол">
-							<div class="xs">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Фамилия">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Имя">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Отчество">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Дата рождения">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Паспорт">
-							<div class="df lg">
-								<div class="sm">
-									<input type="text" /> </div>
-								<div class="md">
-									<input type="text" /> </div>
-							</div>
-						</td>
-						<td data-table-title="Телефон">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="E-mail">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-					</tr>
-					<tr>
-						<td data-table-title="№ п/п:">2</td>
-						<td data-table-title="Пол">
-							<div class="xs">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Фамилия">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Имя">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Отчество">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Дата рождения">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="Паспорт">
-							<div class="df lg">
-								<div class="sm">
-									<input type="text" /> </div>
-								<div class="md">
-									<input type="text" /> </div>
-							</div>
-						</td>
-						<td data-table-title="Телефон">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-						<td data-table-title="E-mail">
-							<div class="lg">
-								<input type="text" /> </div>
-						</td>
-					</tr>
+					<?php for ($i = 0; $i <= ($parentsCount + $childCount - 1); $i++): ?>
+						<tr>
+							<td data-table-title="№ п/п:"><?= $i + 1 ?></td>
+							<td data-table-title="Пол">
+								<div class="xs">
+									<?= \yii\helpers\Html::textInput("list[{$i}][pol]") ?> </div>
+							</td>
+							<td data-table-title="Фамилия">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][last_name]") ?> </div>
+							</td>
+							<td data-table-title="Имя">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][first_name]") ?> </div>
+							</td>
+							<td data-table-title="Отчество">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][second_rname]") ?> </div>
+							</td>
+							<td data-table-title="Дата рождения">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][birthday]") ?> </div>
+							</td>
+							<td data-table-title="Паспорт">
+								<div class="df lg">
+									<div class="sm">
+										<?= \yii\helpers\Html::textInput("list[{$i}][doc_cer]") ?> </div>
+									<div class="md">
+										<?= \yii\helpers\Html::textInput("list[{$i}][doc_num]") ?> </div>
+								</div>
+							</td>
+							<td data-table-title="Телефон">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][phone]") ?> </div>
+							</td>
+							<td data-table-title="E-mail">
+								<div class="lg">
+									<?= \yii\helpers\Html::textInput("list[{$i}][email]") ?> </div>
+							</td>
+						</tr>
+					<?php endfor; ?>
 					</tbody>
 				</table>
 				<div class="tourist_settings">
