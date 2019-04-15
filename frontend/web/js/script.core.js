@@ -2,6 +2,9 @@
 
 	"use strict";
 
+	var places      = 0;
+	var countPlaces = 0;
+
 	var Core = {
 
 		DOMReady: function(){
@@ -115,6 +118,12 @@
 
 				$('.railway_section_place:not(.reserved)').on('click',  function(event) {
 					event.preventDefault();
+
+					if (places <= countPlaces) {
+						alert('Вы уже выбрали достаточно мест');
+						return false;
+					}
+
 					var $this = $(this);
 
 					if(!$(this).hasClass('current')){
@@ -138,6 +147,7 @@
 
 					}
 
+					countPlaces = $('.railway_section_place.current').length;
 				});
 
 			}
