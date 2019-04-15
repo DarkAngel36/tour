@@ -6,7 +6,7 @@ $JS = <<<JS
 var places      = 0;
 var countPlaces = 0;
 var validSelect2 = false;
-var placesArr = {};
+var placesArr = [];
 JS;
 $this->registerJs($JS, \yii\web\View::POS_HEAD);
 
