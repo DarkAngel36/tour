@@ -120,6 +120,11 @@
 
 					if(!$(this).hasClass('current')){
 
+						if (places <= countPlaces) {
+							alert('Вы уже выбрали достаточно мест');
+							return false;
+						}
+
 						if($(this).hasClass('last_place') && $(this).siblings('.first_place').hasClass('current')){
 							$(this).addClass('current').parent().removeClass('not_selected');
 						}
@@ -129,11 +134,6 @@
 
 					}
 					else{
-
-						if (places <= countPlaces) {
-							alert('Вы уже выбрали достаточно мест');
-							return false;
-						}
 
 						if($(this).hasClass('last_place')  && !$(this).closest('.railway_box').find('.not_selected').length ){
 							$(this).removeClass('current').parent().addClass('not_selected');
