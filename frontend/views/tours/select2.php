@@ -168,14 +168,15 @@
 				<div class="railway_container">
 					<div class="railway_box_wrap" data-toggle-check="off">
 						<div class="railway_box">
-							<?php for ($i = 0; $i <= 9; $i++): ?>
-								<?php
-								if (empty($places)) {
-									for ($i = 0; $i <= 53; $i++) {
-										$places[$i] = 0;
-									}
+							<?php
+							if (empty($places)) {
+								for ($i = 0; $i <= 53; $i++) {
+									$places[$i] = 0;
 								}
-								?>
+							}
+							?>
+							<?php for ($i = 0; $i <= 9; $i++): ?>
+
 								<div class="railway_box_item">
 									<div class="railway_box_top mb40">
 										<!-- first_place/last_place меняется на reserved--!>
