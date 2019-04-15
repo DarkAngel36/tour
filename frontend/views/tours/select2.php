@@ -85,43 +85,58 @@
 					</thead>
 					<tbody>
 					<?php for ($i = 0; $i <= ($parentsCount + $childCount - 1); $i++): ?>
+						<?php
+						if (!isset($list[$i])) {
+							$list[$i] = [
+								'pol'          => '',
+								'last_name'    => '',
+								'first_name'   => '',
+								'second_rname' => '',
+								'birthday'     => '',
+								'doc_cer'      => '',
+								'doc_num'      => '',
+								'phone'        => '',
+								'email'        => '',
+							];
+						}
+						?>
 						<tr>
 							<td data-table-title="№ п/п:"><?= $i + 1 ?></td>
 							<td data-table-title="Пол">
 								<div class="xs">
-									<?= \yii\helpers\Html::textInput("list[{$i}][pol]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][pol]", $list[$i]['pol']) ?> </div>
 							</td>
 							<td data-table-title="Фамилия">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][last_name]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][last_name]", $list[$i]['last_name']) ?> </div>
 							</td>
 							<td data-table-title="Имя">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][first_name]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][first_name]", $list[$i]['first_name']) ?> </div>
 							</td>
 							<td data-table-title="Отчество">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][second_rname]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][second_rname]"), $list[$i]['second_rname'] ?> </div>
 							</td>
 							<td data-table-title="Дата рождения">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][birthday]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][birthday]", $list[$i]['birthday']) ?> </div>
 							</td>
 							<td data-table-title="Паспорт">
 								<div class="df lg">
 									<div class="sm">
-										<?= \yii\helpers\Html::textInput("list[{$i}][doc_cer]") ?> </div>
+										<?= \yii\helpers\Html::textInput("list[{$i}][doc_cer]", $list[$i]['doc_cer']) ?> </div>
 									<div class="md">
-										<?= \yii\helpers\Html::textInput("list[{$i}][doc_num]") ?> </div>
+										<?= \yii\helpers\Html::textInput("list[{$i}][doc_num]", $list[$i]['doc_num']) ?> </div>
 								</div>
 							</td>
 							<td data-table-title="Телефон">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][phone]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][phone]", $list[$i]['phone']) ?> </div>
 							</td>
 							<td data-table-title="E-mail">
 								<div class="lg">
-									<?= \yii\helpers\Html::textInput("list[{$i}][email]") ?> </div>
+									<?= \yii\helpers\Html::textInput("list[{$i}][email]", $list[$i]['email']) ?> </div>
 							</td>
 						</tr>
 					<?php endfor; ?>
