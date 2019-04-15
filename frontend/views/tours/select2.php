@@ -169,15 +169,22 @@
 					<div class="railway_box_wrap" data-toggle-check="off">
 						<div class="railway_box">
 							<?php for ($i = 1; $i <= 9; $i++): ?>
+								<?php
+								if (empty($places)) {
+									for ($i = 1; $i <= 54; $i++) {
+										$places[$i] = 0;
+									}
+								}
+								?>
 								<div class="railway_box_item">
 									<div class="railway_box_top mb40">
 										<!-- first_place/last_place меняется на reserved--!>
 										<div>
 											<div data-num="<?= $i ?>"
-											     class="railway_section_place first_place mb20">в
+											     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i], 'first_place') ?> mb20">в
 											</div>
 											<div data-num="<?= $i + 1 ?>"
-											     class="railway_section_place last_place">н
+											     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i], 'last_place') ?>">н
 											</div>
 										</div>
 										<div>
@@ -185,16 +192,20 @@
 										</div>
 										<div>
 											<div data-num="<?= $i + 2 ?>"
-											     class="railway_section_place first_place mb20">в
+											     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i + 2], 'first_place') ?> mb20">в
 											</div>
 											<div data-num="<?= $i + 3 ?>"
-											     class="railway_section_place last_place">н
+											     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i], 'last_place') ?>">н
 											</div>
 										</div>
 									</div>
 									<div class="railway_box_bottom">
-										<div data-num="<?= $i + 4 ?>" class="railway_section_place reserved">н</div>
-										<div data-num="<?= $i + 5 ?>" class="railway_section_place first_place">в</div>
+										<div data-num="<?= $i + 4 ?>"
+										     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i + 4], 'first_place') ?>">н
+										</div>
+										<div data-num="<?= $i + 5 ?>"
+										     class="railway_section_place <?= \common\models\Tours::getPlace($places[$i + 5], 'first_place') ?>">в
+										</div>
 									</div>
 								</div>
 							<?php endfor; ?>

@@ -159,5 +159,18 @@ class Tours extends BaseModel
     {
         return \Yii::$app->basePath . '/../frontend/web/images/tours/' . (!empty($add) ? $add . '/' : '');
     }
+	
+	public static function getPlace($val, $class) {
+		switch ($val) {
+			case -1:
+				return 'reserved';
+				break;
+			case 0:
+				return $class;
+				break;
+			case 1:
+				return $class . ' current';
+		}
+	}
 
 }
