@@ -15,7 +15,7 @@ $initialPreviewArr = [
     'main' => !$model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
     'gallery' => !$model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
 ];
-die(print_r($initialPreviewArr));
+//die(print_r($initialPreviewArr));
 ?>
 
 <div class="tours-form">
@@ -103,25 +103,25 @@ die(print_r($initialPreviewArr));
             "fileuploaded" => "function(event, data, previewId, index) { var name = data.response.fileName; $(\"input[name='Tours[img_list]'][type='hidden']\").val( $(\"input[name='Tours[img_list]'][type='hidden']\").val() + ',' + name ); return false; }",
         ],
         'pluginOptions' => [
-            'multiple' => true,
-            'uploadUrl' => Url::to(['/ajax/files-upload']),
-            'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
-            'uploadExtraData' => [
+	        'multiple' => true,
+	        'uploadUrl' => Url::to(['/ajax/files-upload']),
+	        'deleteUrl' => Url::to(['/ajax/file-delete', [ 'img' => '']]),
+	        'uploadExtraData'      => [
                 'tour_id' => $model->id,
                 'source' => $model::className(),
                 'tmp_id' => $tmp_id,
                 'category' => 'gallery'
             ],
-            'deleteExtraData' => [
+	        'deleteExtraData'      => [
                 'source_id' => $model->id,
                 'source' => $model::className(),
                 'category' => 'gallery'
             ],
-            'maxFileCount' => 10,
-            'overwriteInitial'=>false,
-            'initialPreviewAsData'=>true,
-            'initialPreview' => []/*$initialPreviewArr['gallery']['initialPreview']*/,
-            'initialPreviewConfig' => []/*$initialPreviewArr['gallery']['initialPreviewCfg']*/,
+	        'maxFileCount'         => 10,
+	        'overwriteInitial'     =>false,
+	        'initialPreviewAsData' =>true,
+	        'initialPreview'       => $initialPreviewArr['gallery']['initialPreview'],
+	        'initialPreviewConfig' => $initialPreviewArr['gallery']['initialPreviewCfg'],
         ]
     ]);?>
 
