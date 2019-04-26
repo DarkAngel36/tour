@@ -15,7 +15,7 @@ $initialPreviewArr = [
     'main' => !$model->isNewRecord ? $model->getImagesPreviewArr('main') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
     'gallery' => !$model->isNewRecord ? $model->getImagesPreviewArr('gallery') : ['initialPreview'=>[], 'initialPreviewCfg'=>[]],
 ];
-//die(print_r($initialPreviewArr));
+die(print_r($initialPreviewArr));
 ?>
 
 <div class="tours-form">
