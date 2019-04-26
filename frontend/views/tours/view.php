@@ -1,10 +1,11 @@
 <?php
-$imgG = $model->getImagesPreview('gallery','168x144');
-$img = $model->getImagesPreview('main','368x273');
-$options = explode('<br />', nl2br($model->options));
-$this->title = $model->name;
+$imgG                          = $model->getImagesPreview('gallery','168x144');
+$img                           = $model->getImagesPreview('main','368x273');
+$options                       = explode('<br />', nl2br($model->options));
+$this->title                   = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Туры', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+$this->params['back-url']      = \yii\helpers\Url::to(['index']);
 ?>
 <!-- - - - - - - - - - - - - - .about_tour_container - - - - - - - - - - - - - - - --->
 <div class="about_tour_container indent_14">

@@ -125,7 +125,9 @@ use common\widgets\Alert;
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             'options' => ['class'=>'breadcrumbs clearfix']
         ]) ?>
-
+	                    <?php if (!empty($this->params['back-url'])): ?>
+		                    <a class="back_link" href="<?= $this->params['back-url'] ?>">назад</a>
+	                    <?php endif ?>
                     </div>
                 </div>
             </div>
