@@ -48,12 +48,14 @@ use common\widgets\Alert;
     <!-- Include Libs CSS     ============================================ -->
     <!-- Theme CSS     ============================================ -->
     <?php $this->head() ?>
+
+	<link rel="stylesheet" media="screen" href="/css/reset.css"/>
+	<link rel="stylesheet" media="screen" href="/css/bootstrap.css"/>
     <link rel="stylesheet" media="screen" href="/css/style.css" />
     <link rel="stylesheet" media="screen" href="/css/responsive.css" />
-    <link rel="stylesheet" media="screen" href="/css/reset.css" />
-    <link rel="stylesheet" media="screen" href="/css/bootstrap.css" />
 
-<!-- Head End       ============================================ -->
+
+	<!-- Head End       ============================================ -->
 </head>
 <!-- Body Start     ============================================ -->
 
